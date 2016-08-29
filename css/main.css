@@ -1,0 +1,27 @@
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+	background-color: #696565 !important;
+}
+
+
+/*.navbar {                       // how to remove rounded edges from bootstrap nav? 
+	border-radius: 0px;
+}*/
+
+h1 {
+	color: white;
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+	font-size: 56px;
+}
+
+header h3 {
+	color: white;
+	font-family: 'Poiret One', cursive;
+	font-weight: normal;
+	font-size: 16px;	
+}
