@@ -6,6 +6,7 @@ $(function() {
     $('.article-search').submit(function(e) {
         e.preventDefault();
         var searchTerm = $('#by-date').val();
+
         getNyTimes(searchTerm);
         getGuardian(searchTerm);
 
@@ -58,6 +59,7 @@ $(function() {
     }
 
 
+// TODO    show article snippet with read more... underneath so user can click to see entire article.
 
     function showNyTimes(results) {
         var html = "";
@@ -111,16 +113,16 @@ $(function() {
 
 
 
-// $(function() {
-//     $("#by-date").datepicker({
-//         changeMonth: true,
-//         changeYear: true,
-//         formatDate: 'yy-mm-dd',
-//         altFormat: "yy-mm-dd",
-//         yearRange: "1851:c+10"
+$(function() {
+    $("#by-date").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yymmdd',
+        altFormat: "yy-mm-dd",
+        yearRange: "1851:c+10"
 
-//     });
-// });
+    });
+});
 
 
 

@@ -34,3 +34,12 @@ header h3 {
 #guardian {
 	color: white;
 }
+
+
+a {
+	color: #23ffaa;
+}
+
+a:hover {
+	color: #8f3e97;
+}
