@@ -63,21 +63,18 @@ $(function() {
 
     function showNyTimes(results) {
         var html = "";
-        $.each(results, function(index, value) {
-        	var result1 = results.response.docs['0'].snippet;
-        	var result1Headline = results.response.docs['0'].headline.main;
-        	var result2 = results.response.docs['1'].snippet;                         // headline.print_headline;
-        	var result2Headline = results.response.docs['1'].headline.main;                            // byline.original;
-        	var result3 = results.response.docs['2'].snippet;
-        	var result3Headline = results.response.docs['2'].headline.main;
-            html += '<p><a href="results.web_url">' + result1Headline  + '</a></p>' + '<span>' + result1 + '</span>';
-            html += '<p><a href="#">' + result2Headline + '</a></p>' + '<span>' + result2 + '</span>';
-            html += '<p><a href="#">' + result3Headline  + '</a></p>' + '<span>' + result3 + '</span>';
-            console.log(results.response.docs['0'], results.response.docs['1']);
+        var docs = results.response.docs;
+        console.log(docs);
+        $.each(docs, function(index, currentObject) {
+            console.log(currentObject);
+            var result = currentObject.snippet;
+            var resultHeadline = currentObject.headline.main;
+            var resultURL = currentObject.web_url;
+
+            html += '<p><a href="' + resultURL + '">' + resultHeadline  + '</a></p>' + '<span>' + result + '</span>';
         });
         $('#ny-times').html(html);
     }
-    // $('#ny-times').append(results);
 
 
     function getGuardian(searchTerm) {
