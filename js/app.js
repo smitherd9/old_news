@@ -12,8 +12,14 @@ $(function() {
         var byTopic = $('#by-topic').val();
         var byKeyword = $('#by-keyword').val();
         // try to format date here so it works with the api and looks nice to user
-        getNyTimesByDate(byDate);
+        getNyTimesByDate(byDate);        
+        getNyTimesByDateRange(startDate, endDate);
+        getNyTimesByTopic(byTopic);
+        getNyTimesByKeyword(byKeyword);
         getGuardianByDate(byDate);
+        getGuardianByDateRange(startDate, endDate);
+        // getGuardianByTopic(byTopic);
+        // getGuardianByKeyword(byKeyword);
 
 
     });
@@ -44,7 +50,7 @@ $(function() {
 
     // For date range // 
 
-    function getNyTimesByDateRange(byDateRange) {
+    function getNyTimesByDateRange(startDate, endDate) {
         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         $.ajax({
             url: url,
@@ -82,7 +88,7 @@ $(function() {
 
     }
 
-    function getNyTimesByKeyword(byTopic) {
+    function getNyTimesByKeyword(byKeyword) {
         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         $.ajax({
             url: url,
@@ -139,6 +145,69 @@ $(function() {
         });
     }
 
+
+    function getGuardianByDateRange(startDate, endDate) {
+        var url = 'http://content.guardianapis.com/search?';
+        $.ajax({
+            url: url,
+            type: 'GET',
+            format: "json",
+            data: {
+                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+                'from-date': startDate,
+                'to-date': endDate,
+                'use-date': 'published'
+            },
+            success: function(data) {
+                console.log(data);
+                var results = data;
+                showGuardian(results);
+            }
+        });
+    }
+
+
+    //  function getGuardianByTopic(byTopic) {
+    //     var url = 'http://content.guardianapis.com/sections';
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         format: "json",
+    //         data: {
+    //             'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+    //             'q': byTopic
+    //             
+    //         },
+    //         success: function(data) {
+    //             console.log(data);
+    //             var results = data;
+    //             showGuardian(results);
+    //         }
+    //     });
+    // }
+
+
+
+    //  function getGuardianByKeyword(byKeyword) {
+    //     var url = 'http://content.guardianapis.com/search?';
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         format: "json",
+    //         data: {
+    //             'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+    //             'from-date': startDate,
+    //             'to-date': endDate,
+    //             'use-date': 'published'
+    //         },
+    //         success: function(data) {
+    //             console.log(data);
+    //             var results = data;
+    //             showGuardian(results);
+    //         }
+    //     });
+    // }
+
     // The Guardian API doesn't have a snippet in the response to put on the page.  Maybe try 
     // to display something from the given URL?
     function showGuardian(results) {
@@ -165,7 +234,7 @@ $(function() {
         $("#by-date").datepicker({
             changeMonth: true,
             changeYear: true,
-            dateFormat: 'yy-mm-dd',
+            dateFormat: 'yymmdd',
             altFormat: "yy-mm-dd",
             yearRange: "1851:c"
 
@@ -174,7 +243,7 @@ $(function() {
         $("#by-date-range1").datepicker({
             changeMonth: true,
             changeYear: true,
-            dateFormat: 'yy-mm-dd',
+            dateFormat: 'yymmdd',
             altFormat: "yy-mm-dd",
             yearRange: "1851:c"
 
@@ -183,7 +252,7 @@ $(function() {
         $("#by-date-range2").datepicker({
             changeMonth: true,
             changeYear: true,
-            dateFormat: 'yy-mm-dd',
+            dateFormat: 'yymmdd',
             altFormat: "yy-mm-dd",
             yearRange: "1851:c"
 
