@@ -1,95 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width initial-scale=1">
-	<title>Old News</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	
-	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato|Poiret+One" rel="stylesheet">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>Old News</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Poiret+One" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 </head>
+
 <body>
-
-
-
-<!-- Bootstrap Navbar -->
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="#">Old News</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li> 
-        <li><a href="#">Page 3</a></li> 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="container">
-<header>
-  <h1>Old News</h1>
-  <h3>In a world of 24 hour news, sometimes a pause button is necessary.</h3>
-
-</header>
-
-
-<section class="search">
-  <form class="article-search">
-    <label>Search by Date</label>
-    <input type="text" name="by-date" id="by-date" placeholder="Ex: 19560816 YYYYMMDD">
-    <button class="search-button">Search</button>
-  </form>
-
-  <form class="article-search">
-    <label>Search by Date Range</label>
-    <input type="text" name="by-date-range" id="by-date-range" placeholder="Ex: 19560816 - 19570827 YYYYMMDD">
-    <button class="search-button">Search</button>
-  </form>
-
-  <form class="article-search">
-    <label>Search by Topic</label>
-    <input type="text" name="by-topic" id="by-topic" placeholder="Ex: Politics, Opinion, Sports">
-    <button class="search-button">Search</button>
-  </form>
-
-  <form class="article-search">
-    <label>Search by Keyword</label>
-    <input type="text" name="by-keyword" id="by-keyword" placeholder="Ex: Cuban Missle Crisis">
-    <button class="search-button">Search</button>
-  </form>
-  
-</section>
-
-
-<div class="row">
-  <div class="col-sm-4" id="ny-times"></div>
-  <div class="col-sm-4" id="guardian"></div>
-  <div class="col-sm-4">.col-sm-4</div>
-</div>
-
-
-<!-- TODO -- Try to implement grabbed headline photos into carousel.  These will change every day. -->
-
-<!-- <div id="featuredCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Old News</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Old News</h1>
+            <h3>In a world of 24 hour news, sometimes a pause button is necessary.</h3>
+        </header>
+        <section class="search">
+            <form class="article-search">
+                <label>Search by Date</label>
+                <input type="text" name="by-date" id="by-date" placeholder="Ex: 19560816 YYYYMMDD">
+                <button class="search-button">Search</button>
+            </form>
+            <form class="article-search">
+                <label>Search by Date Range</label>
+                <input type="text" name="by-date-range" id="by-date-range1" placeholder="Start Date" required>
+                <input type="text" name="by-date-range" id="by-date-range2" placeholder="End Date" required>
+                <button class="search-button">Search</button>
+            </form>
+            <form class="article-search">
+                <label>Search by Topic</label>
+                <input type="text" name="by-topic" id="by-topic" placeholder="Ex: Politics, Opinion, Sports">
+                <button class="search-button">Search</button>
+            </form>
+            <form class="article-search">
+                <label>Search by Keyword</label>
+                <input type="text" name="by-keyword" id="by-keyword" placeholder="Ex: Cuban Missle Crisis">
+                <button class="search-button">Search</button>
+            </form>
+        </section>
+        <div class="row">
+            <div class="col-sm-4" id="ny-times"></div>
+            <div class="col-sm-4" id="guardian"></div>
+            <div class="col-sm-4">.col-sm-4</div>
+        </div>
+        <!-- TODO -- Try to implement grabbed headline photos into carousel.  These will change every day. -->
+        <!-- <div id="featuredCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators
         <!-- <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -97,7 +81,6 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol> -->
-
         <!-- Wrapper for slides -->
         <!-- <div class="carousel-inner" role="listbox">
             <div class="item active">
@@ -156,7 +139,6 @@
                 </div>
             </div>
         </div> -->
-
         <!-- Left and right controls -->
         <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -167,13 +149,10 @@
             <span class="sr-only">Next</span>
         </a>
     </div>  -->
-
-
-
-
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-<script src="js/app.js"></script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
