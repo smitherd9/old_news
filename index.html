@@ -47,31 +47,33 @@
         <section class="search">
             <form class="article-search">
                 <label>Search by Date</label>
-                <input type="text" name="by-date" id="by-date" placeholder="Ex: 19560816 YYYYMMDD">
-                <button class="search-button">Search</button>
+                <input type="text" name="by-date" id="by-date">
+                <button class="search-button" id="btn-by-date">Search</button>
             </form>
             <form class="article-search">
                 <label>Search by Date Range</label>
                 <input type="text" name="by-date-range" id="by-date-range1" placeholder="Start Date" required>
                 <input type="text" name="by-date-range" id="by-date-range2" placeholder="End Date" required>
-                <button class="search-button">Search</button>
+                <button class="search-button" id="btn-by-date-range">Search</button>
             </form>
             <form class="article-search">
                 <label>Search by Topic</label>
                 <input type="text" name="by-topic" id="by-topic" placeholder="Ex: Politics, Opinion, Sports">
-                <button class="search-button">Search</button>
+                <button class="search-button" id="btn-by-topic">Search</button>
             </form>
             <form class="article-search">
                 <label>Search by Keyword</label>
                 <input type="text" name="by-keyword" id="by-keyword" placeholder="Ex: Cuban Missle Crisis">
-                <button class="search-button">Search</button>
+                <button class="search-button" id="btn-by-keyword">Search</button>
             </form>
         </section>
         <div class="row">
             <div class="col-sm-4" id="ny-times"></div>
             <div class="col-sm-4" id="guardian"></div>
-            <div class="col-sm-4">.col-sm-4</div>
+            <div class="col-sm-4"></div>
         </div>
+
+
         <!-- TODO -- Try to implement grabbed headline photos into carousel.  These will change every day. -->
         <!-- <div id="featuredCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators
@@ -152,6 +154,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="js/moment.js"></script>
     <script src="js/app.js"></script>
 </body>
 
