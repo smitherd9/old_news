@@ -18,42 +18,70 @@ $(function() {
     /////      Get data by date      /////
 
 
-    $('#btn-by-date').click(function() {
+    $('#btn-by-date-nyTimes').click(function() {
         // Each API has different date format requirements so it is necessary to 
         // reformat the date without changing what the user sees before 
         // the ajax call is made (before the date is sent to the API)
 
         // datepicker grabs date input on form and creates an object  
         // using 'getDate' on the input instead of .val()
-        var byDate = $('#by-date').datepicker("getDate");
+        var byDate = $('#by-date-nyTimes').datepicker("getDate");
         // mDate creates a moment from moment.js for byDate object
         var mDate = moment(byDate);
         // nyTimesDate changes format for mDate object to a yymmdd string
         var nyTimesDate = mDate.format('YYYYMMDD');
-        var guardianDate = mDate.format('YYYY-MM-DD');
+        
         console.log(nyTimesDate);
-        console.log(guardianDate);
+        
         getNyTimesByDate(nyTimesDate);
-        getGuardianByDate(guardianDate);
+        
     });
 
 
+    $('#btn-by-date-guardian').click(function() {
+        // Each API has different date format requirements so it is necessary to 
+        // reformat the date without changing what the user sees before 
+        // the ajax call is made (before the date is sent to the API)
 
+        // datepicker grabs date input on form and creates an object  
+        // using 'getDate' on the input instead of .val()
+        var byDate = $('#by-date-guardian').datepicker("getDate");
+        // mDate creates a moment from moment.js for byDate object
+        var mDate = moment(byDate);
+        // nyTimesDate changes format for mDate object to a yymmdd string
+        
+        var guardianDate = mDate.format('YYYY-MM-DD');
+        
+        console.log(guardianDate);
+        
+        getGuardianByDate(guardianDate);
+    });
 
 
 
     /////      Get data by date range      /////
 
 
-    $('#btn-by-date-range').click(function() {
-        var startDate = $('#by-date-range1').val();
-        var endDate = $('#by-date-range2').val();
-        getNyTimesByDateRange(startDate, endDate);
-        getGuardianByDateRange(startDate, endDate);
+    $('#btn-by-date-range-nyTimes').click(function() {
+        var date1 = $('#by-date-range1-nyTimes').datepicker("getDate");
+        var date2 = $('#by-date-range2-nyTimes').datepicker("getDate");
+        var mDate1 = moment(date1);
+        var mDate2 = moment(date2);
+        var nyTimesDate1 = mDate1.format('YYYYMMDD');
+        var nyTimesDate2 = mDate2.format('YYYYMMDD');
+        getNyTimesByDateRange(nyTimesDate1, nyTimesDate2);        
     });
 
 
-
+    $('#btn-by-date-range-guardian').click(function() {
+        var date1 = $('#by-date-range1-guardian').datepicker("getDate");
+        var date2 = $('#by-date-range2-guardian').datepicker("getDate");
+        var mDate1 = moment(date1);
+        var mDate2 = moment(date2);
+        var guardianDate1 = mDate1.format('YYYYMMDD');
+        var guardianDate2 = mDate2.format('YYYYMMDD');        
+        getGuardianByDateRange(guardianDate1, guardianDate2);
+    });
 
 
 
@@ -61,9 +89,15 @@ $(function() {
     /////      Get data by topic      /////
 
 
-    $('#btn-by-topic').click(function() {
-        var byTopic = $('#by-topic').val();
+    $('#btn-by-topic-nyTimes').click(function() {
+        var byTopic = $('#by-topic-nyTimes').val();
         getNyTimesByTopic(byTopic);
+        
+    });
+
+
+    $('#btn-by-topic-guardian').click(function() {
+        var byTopic = $('#by-topic-guardian').val();        
         getGuardianByTopic(byTopic);
     });
 
@@ -76,9 +110,15 @@ $(function() {
     /////      Get data by keyword      /////
 
 
-    $('#btn-by-keyword').click(function() {
-        var byKeyword = $('#by-keyword').val();
+    $('#btn-by-keyword-nyTimes').click(function() {
+        var byKeyword = $('#by-keyword-nyTimes').val();
         getNyTimesByKeyword(byKeyword);
+        
+    });
+
+
+    $('#btn-by-keyword-guardian').click(function() {
+        var byKeyword = $('#by-keyword-guardian').val();        
         getGuardianByKeyword(byKeyword);
     });
 
@@ -134,8 +174,8 @@ $(function() {
             dataType: "json",
             data: {
                 'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-                'begin_date': startDate,
-                'end_date': endDate
+                'begin_date': nyTimesDate1,
+                'end_date': nyTimesDate2
             },
             success: function(data) {
                 console.log(data);
@@ -273,8 +313,8 @@ $(function() {
             format: "json",
             data: {
                 'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-                'from-date': startDate,
-                'to-date': endDate,
+                'from-date': guardianDate1,
+                'to-date': guardianDate2,
                 'use-date': 'published',
                 'show-fields': 'trailText,headline,byline'
             },
@@ -360,7 +400,7 @@ $(function() {
 
 
     $(function() {
-        $("#by-date").datepicker({
+        $("#by-date-nyTimes").datepicker({
             changeMonth: true,
             changeYear: true,
             dateFormat: 'mm-dd-yy',
@@ -368,7 +408,15 @@ $(function() {
 
         });
 
-        $("#by-date-range1").datepicker({
+        $("#by-date-guardian").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'mm-dd-yy',
+            yearRange: "1999:c"
+
+        });
+
+        $("#by-date-range1-nyTimes").datepicker({
             changeMonth: true,
             changeYear: true,
             dateFormat: 'mm-dd-yy',
@@ -376,11 +424,27 @@ $(function() {
 
         });
 
-        $("#by-date-range2").datepicker({
+        $("#by-date-range2-nyTimes").datepicker({
             changeMonth: true,
             changeYear: true,
             dateFormat: 'mm-dd-yy',
             yearRange: "1851:c"
+
+        });
+
+        $("#by-date-range1-guardian").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'mm-dd-yy',
+            yearRange: "1999:c"
+
+        });
+
+        $("#by-date-range2-guardian").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'mm-dd-yy',
+            yearRange: "1999:c"
 
         });
     });
