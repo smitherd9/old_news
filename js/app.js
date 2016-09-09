@@ -104,7 +104,16 @@ $(function() {
 
     $('#btn-by-topic-nyTimes').click(function() {
         var byTopic = $('#by-topic-nyTimes').val();
-        getNyTimesByTopic(byTopic);
+        var byDate = $('#by-topic-date-nyTimes').datepicker("getDate");
+        // mDate creates a moment from moment.js for byDate object
+        var mDate = moment(byDate);
+        // nyTimesDate changes format for mDate object to a yymmdd string
+        var nyTimesDate = mDate.format('YYYYMMDD');
+
+        console.log(nyTimesDate);
+
+        
+        getNyTimesByTopic(byTopic, nyTimesDate);
 
     });
 
@@ -211,7 +220,7 @@ $(function() {
     /// By Topic /// 
 
 
-    function getNyTimesByTopic(byTopic) {
+    function getNyTimesByTopic(byTopic, nyTimesDate) {
         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         $.ajax({
             url: url,
@@ -219,7 +228,10 @@ $(function() {
             dataType: "json",
             data: {
                 'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-                'news_desk': byTopic /// Not returning correct news desk section
+                'q': byTopic, /// Not returning correct news desk section
+                // 'facet_fields': (section_name, type_of_material)
+                'begin_date': nyTimesDate,
+                'end_date': nyTimesDate
             },
             success: function(data) {
                 console.log(data);
