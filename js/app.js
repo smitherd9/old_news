@@ -464,6 +464,9 @@ $(function() {
             $('#ny-times').fadeOut(500);            
             $('#guardian').fadeIn(1000);
 
+            // displayBody(resultURL);
+            
+
 
             // html += '<p><a href="' + resultURL + '">' + resultHeadline + '</a></p>' + '<span>' + result + '</span>';
         });
@@ -471,11 +474,13 @@ $(function() {
     }
 
 
- $('#guardian').on('click', '.readMore', function() {
-        getGuardianArticle();
+ $('#guardian').on('click', '.readMore', function displayBody(resultURL) {
+        getGuardianArticle(resultURL);
         foldOut();    
 
     });
+
+
 
  function foldOUt(){
     var paperfold = $('.hidden').paperfold();
@@ -483,8 +488,8 @@ $(function() {
  }
 
 
- function getGuardianArticle() {
-        var url = 'http://content.guardianapis.com/search?';
+ function getGuardianArticle(resultURL) {
+        var url = resultURL;
         $.ajax({
             url: url,
             type: 'GET',

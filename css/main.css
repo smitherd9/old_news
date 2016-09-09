@@ -7,9 +7,6 @@ body {
 }
 
 
-/*.navbar {                       // how to remove rounded edges from bootstrap nav? 
-	border-radius: 0px;
-}*/
 
 .navbar {
     margin: 0;
@@ -21,45 +18,45 @@ body {
 
 }
 
-.jumbotron {
-    background: url(../img/old_news_bkgrd14.jpg) no-repeat center center fixed;
+/*.jumbotron {
+    background: url(../img/old_news_bkgrd14.jpg) no-repeat center center fixed;*/
     /*background-color: rgba(0, 0, 0, 0.5);*/
-    background-size: cover;
+    /*background-size: cover;
     background-color: #605a60 !important;
     color: white;
-}
+}*/
 
-.jumbotron h1 {
+/*.jumbotron h1 {
     font-size: 88px;
-}
+}*/
 
-header {
+/*header {*/
     /*background: url(../img/old_news_bkgrd3.jpg) no-repeat center center fixed;*/
-    padding: 20px;
+/*    padding: 20px;
     width: 100%;
     margin: 100px auto;
     text-align: center;
 }
 
-header h1 {
+header h1 {*/
 	/*background-color: rgba(0, 0, 0, 0.5);*/
-    border-radius: 5px;
+ /*   border-radius: 5px;
     color: #ccc6c9 !important;
     display: inline;
     padding: 0.5rem;
     font-family: 'Shadows Into Light', cursive;
-    font-weight: bold;
+    font-weight: bold;*/
     /*font-size: 102px;*/
   
-  -webkit-box-decoration-break: clone;
+/*  -webkit-box-decoration-break: clone;
   box-decoration-break: clone;    
     
 }
 
-header h3 {
+header h3 {*/
 	/*background-color: rgba(0, 0, 0, 0.5);*/
     /*display: inline;*/
-    padding: 0.5rem;
+  /*  padding: 0.5rem;
     color: #fff;
     font-family: 'Poiret One', cursive;
     font-weight: bold;
@@ -67,7 +64,7 @@ header h3 {
 
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone; 
-}
+}*/
 
 h2 {
     color: white;
@@ -160,6 +157,9 @@ a.readMore {
 
 
 
+
+  /*  Button Styles  */
+
 .btn-search {        
     -moz-box-shadow: 3px 4px 0px 0px #1564ad;
     -webkit-box-shadow: 3px 4px 0px 0px #1564ad;
@@ -215,4 +215,93 @@ a:hover {
     font-family: 'Dancing Script', cursive;
     font-weight: bold italic;
     font-size: 28px;
+}
+
+
+.navbar-right {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold italic;
+    font-size: 28px;
+}
+
+
+
+
+
+
+
+  /*  Carousel pictures and styles  */
+
+
+
+.slide1, .slide2, .slide3 {
+    min-height: 560px;                  /* Must have a height or min-height set due to use of background images */
+    background-size: cover;
+    background-position: center center;
+}
+.slide1 {
+    background-image: url(../img/old_news_bkgrd15.jpg);
+}
+.slide2 {
+    background-image: url(../img/old_news_bkgrd16.jpg);
+}
+.slide3 {
+    background-image: url(../img/old_news_bkgrd17.jpg);
+}
+
+
+/* Carousel Fade Effect */
+.carousel.carousel-fade .item {
+    -webkit-transition: opacity 1s linear;
+    -moz-transition: opacity 1s linear;
+    -ms-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    transition: opacity 1s linear;
+    opacity: .5;
+}
+.carousel.carousel-fade .active.item {
+    opacity: 1;
+}
+.carousel.carousel-fade .active.left,
+.carousel.carousel-fade .active.right {
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+
+/* Carousel Overlay */
+.carousel-overlay {
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    left: 0;
+}
+
+
+.carousel-overlay h1 {
+    border-radius: 5px;
+    color: #ccc6c9 !important;
+    display: inline;
+    padding: 0.5rem;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    font-size: 8em;
+
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;  
+}
+
+
+.carousel-overlay h3 {
+    padding: 0.5rem;
+    color: #fff;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 24px;
+
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;  
 }
