@@ -327,7 +327,9 @@ $(function() {
                 'to-date': guardianDate,
                 'use-date': 'published',
                 'show-fields': 'trailText,headline,byline',
-                'show-elements': 'image'
+                'show-elements': 'image',
+                'show-blocks': 'body',
+                'shouldHideAdverts': true 
             },
             success: function(data) {
                 console.log(data);
@@ -359,7 +361,8 @@ $(function() {
                 'to-date': guardianDate2,
                 'use-date': 'published',
                 'show-fields': 'trailText,headline,byline',
-                'show-blocks': 'body'
+                'show-blocks': 'body',
+                'shouldHideAdverts': true 
             },
             success: function(data) {
                 console.log(data);
@@ -381,7 +384,8 @@ $(function() {
                 'q': byTopic,
                 'from-date': guardianDate,
                 'to-date': guardianDate,
-                'show-fields': 'trailText,headline,byline'
+                'show-fields': 'trailText,headline,byline',
+                'shouldHideAdverts': true 
 
             },
             success: function(data) {
@@ -429,6 +433,7 @@ $(function() {
             var result = currentObject.fields.trailText;
             var resultHeadline = currentObject.fields.headline //.webTitle;
             var resultURL = currentObject.webUrl;
+            var bodyText = currentObject.blocks.body.bodyTextSummary;
 
             var element = $("<p>");
             element.addClass('article');
@@ -445,7 +450,7 @@ $(function() {
             snippet.text(result);
 
             var readMore = $('<a>');
-            // readMore.attr('href', resultURL);
+            readMore.attr('href', bodyText);
             readMore.addClass('readMore');
             readMore.text('Read More...');
 
@@ -486,7 +491,8 @@ $(function() {
             format: "json",
             data: {
                 'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-                'show-blocks': 'body'                
+                'show-blocks': 'body',
+                'shouldHideAdverts': true                
             },
             success: function(data) {
                 console.log(data);
