@@ -104,14 +104,10 @@ $(function() {
 
     $('#btn-by-topic-nyTimes').click(function() {
         var byTopic = $('#by-topic-nyTimes').val();
-        var byDate = $('#by-topic-date-nyTimes').datepicker("getDate");
-        // mDate creates a moment from moment.js for byDate object
-        var mDate = moment(byDate);
-        // nyTimesDate changes format for mDate object to a yymmdd string
+        var byDate = $('#by-topic-date-nyTimes').datepicker("getDate");        
+        var mDate = moment(byDate);       
         var nyTimesDate = mDate.format('YYYYMMDD');
-
         console.log(nyTimesDate);
-
         
         getNyTimesByTopic(byTopic, nyTimesDate);
 
@@ -297,7 +293,13 @@ $(function() {
             snippet.addClass('snippet');
             snippet.text(result);
 
+            var readMore = $('<a>');
+            // readMore.attr('href', bodyText);
+            readMore.addClass('readMore');
+            readMore.text('Read More...');
+
             element.append(snippet);
+            element.append(readMore);
 
             $('#ny-times').append(element);
             $('#ny-times').fadeIn(1000);
@@ -386,7 +388,7 @@ $(function() {
 
 
     function getGuardianByTopic(byTopic, guardianDate) {
-        var url = 'http://content.guardianapis.com/sections';
+        var url = 'http://content.guardianapis.com/search?';
         $.ajax({
             url: url,
             type: 'GET',
@@ -445,7 +447,7 @@ $(function() {
             var result = currentObject.fields.trailText;
             var resultHeadline = currentObject.fields.headline //.webTitle;
             var resultURL = currentObject.webUrl;
-            var bodyText = currentObject.blocks.body.bodyTextSummary;
+            // var bodyText = currentObject.blocks.body.bodyTextSummary;
 
             var element = $("<p>");
             element.addClass('article');
@@ -462,7 +464,7 @@ $(function() {
             snippet.text(result);
 
             var readMore = $('<a>');
-            readMore.attr('href', bodyText);
+            // readMore.attr('href', bodyText);
             readMore.addClass('readMore');
             readMore.text('Read More...');
 
@@ -476,13 +478,11 @@ $(function() {
             $('#ny-times').fadeOut(500);            
             $('#guardian').fadeIn(1000);
 
-            // displayBody(resultURL);
-            
+            // displayBody(resultURL);      
 
-
-            // html += '<p><a href="' + resultURL + '">' + resultHeadline + '</a></p>' + '<span>' + result + '</span>';
+           
         });
-        // $('#guardian').html(html);
+        
     }
 
 
