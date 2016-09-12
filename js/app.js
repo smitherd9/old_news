@@ -144,32 +144,6 @@ $(function() {
 
 
 
-
-
-
-    // /////      Get data by keyword      /////
-
-
-    // $('#btn-by-keyword-nyTimes').click(function() {
-    //     var byKeyword = $('#by-keyword-nyTimes').val();
-    //     getNyTimesByKeyword(byKeyword);
-
-    // });
-
-
-    // $('#btn-by-keyword-guardian').click(function() {
-    //     var byKeyword = $('#by-keyword-guardian').val();
-    //     getGuardianByKeyword(byKeyword);
-    // });
-
-
-
-
-
-
-
-
-
     ////////          Functions for New York Times        //////////
 
 
@@ -243,8 +217,7 @@ $(function() {
             dataType: "json",
             data: {
                 'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-                'q': byTopic, /// Not returning correct news desk section
-                // 'facet_fields': (section_name, type_of_material)
+                'q': byTopic,                 
                 'begin_date': nyTimesDate,
                 'end_date': nyTimesDate
             },
@@ -258,35 +231,9 @@ $(function() {
     }
 
 
+    
 
-
-
-
-
-
-    // /// By Keyword /// 
-
-
-    // function getNyTimesByKeyword(byKeyword) {
-    //     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-    //     $.ajax({
-    //         url: url,
-    //         type: 'GET',
-    //         dataType: "json",
-    //         data: {
-    //             'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-    //             'news_desk': byKeyword
-    //         },
-    //         success: function(data) {
-    //             console.log(data);
-    //             var results = data;
-    //             showNyTimes(results);
-    //         }
-    //     });
-
-    // }
-
-    // TODO    show article snippet with read more... underneath so user can click to see entire article.
+    
 
     function showNyTimes(results) {
         var html = "";
@@ -358,7 +305,7 @@ $(function() {
     /// By Date /// 
 
     function getGuardianByDate(guardianDate) {
-        var url = 'https://content.guardianapis.com/search?';
+        var url = 'http://content.guardianapis.com/search?';
         $.ajax({
             url: url,
             type: 'GET',
@@ -440,26 +387,7 @@ $(function() {
 
 
 
-    // function getGuardianByKeyword(byKeyword) {
-    //     var url = 'http://content.guardianapis.com/tags';
-    //     $.ajax({
-    //         url: url,
-    //         type: 'GET',
-    //         format: "json",
-    //         data: {
-    //             'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-    //             'q': byKeyword,
-    //             'show-fields': 'trailText,headline,byline',
-
-    //             'use-date': 'published'
-    //         },
-    //         success: function(data) {
-    //             console.log(data);
-    //             var results = data;
-    //             showGuardian(results);
-    //         }
-    //     });
-    // }
+   
 
 
 
