@@ -1,19 +1,6 @@
 $(function() {
 
 
-    // You can make separate functions for each ajax call 
-    // You will likely need separate functions for each form
-
-    $('#ny-times').hide();
-    $('#guardian').hide();
-
-    $('.article-search').submit(function(e) {
-        e.preventDefault();
-
-
-    });
-
-
     // Function for Animate.Css // 
 
     $.fn.extend({
@@ -24,6 +11,38 @@ $(function() {
             });
         }
     });
+
+
+    // You can make separate functions for each ajax call 
+    // You will likely need separate functions for each form
+
+    $('#ny-times').hide();
+    $('#guardian').hide();
+    
+
+    $('.article-search').submit(function(e) {
+        e.preventDefault();
+
+
+    });
+
+
+    $('#about-screen').click(function(){        
+        $('.overlay').show();
+        $('.overlay').animateCss('slideInDown');
+    });
+
+    $('#close-button').click(function(){
+        $('.overlay').fadeOut(600);
+        // $('.overlay').animateCss('slideOutUp');
+        // setTimeout(function() {
+        //             $('.overlay').hide();
+        //         }, 600);
+        
+    });
+
+
+    
 
 
 
@@ -125,32 +144,6 @@ $(function() {
 
 
 
-
-
-
-    // /////      Get data by keyword      /////
-
-
-    // $('#btn-by-keyword-nyTimes').click(function() {
-    //     var byKeyword = $('#by-keyword-nyTimes').val();
-    //     getNyTimesByKeyword(byKeyword);
-
-    // });
-
-
-    // $('#btn-by-keyword-guardian').click(function() {
-    //     var byKeyword = $('#by-keyword-guardian').val();
-    //     getGuardianByKeyword(byKeyword);
-    // });
-
-
-
-
-
-
-
-
-
     ////////          Functions for New York Times        //////////
 
 
@@ -224,8 +217,7 @@ $(function() {
             dataType: "json",
             data: {
                 'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-                'q': byTopic, /// Not returning correct news desk section
-                // 'facet_fields': (section_name, type_of_material)
+                'q': byTopic,                 
                 'begin_date': nyTimesDate,
                 'end_date': nyTimesDate
             },
@@ -239,35 +231,9 @@ $(function() {
     }
 
 
+    
 
-
-
-
-
-
-    // /// By Keyword /// 
-
-
-    // function getNyTimesByKeyword(byKeyword) {
-    //     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-    //     $.ajax({
-    //         url: url,
-    //         type: 'GET',
-    //         dataType: "json",
-    //         data: {
-    //             'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-    //             'news_desk': byKeyword
-    //         },
-    //         success: function(data) {
-    //             console.log(data);
-    //             var results = data;
-    //             showNyTimes(results);
-    //         }
-    //     });
-
-    // }
-
-    // TODO    show article snippet with read more... underneath so user can click to see entire article.
+    
 
     function showNyTimes(results) {
         var html = "";
@@ -278,8 +244,9 @@ $(function() {
             var result = currentObject.snippet; // headline.print_headline;
             var resultHeadline = currentObject.headline.main; // byline.original;
             var resultURL = currentObject.web_url;
+            var body = currentObject.lead_paragraph;
 
-            var element = $("<p>");
+            var element = $("<div>");
             element.addClass('article');
 
             var headline = $('<a>');
@@ -298,21 +265,29 @@ $(function() {
             readMore.addClass('readMore');
             readMore.text('Read More...');
 
+            var bodyText = $('<div>');
+            bodyText.addClass('bodyText');
+            bodyText.text(body); 
+
+
             element.append(snippet);
             element.append(readMore);
+            element.append(bodyText);
 
             $('#ny-times').append(element);
+            
+            $('#guardian').fadeOut(500);            
             $('#ny-times').fadeIn(1000);
 
-
-            // html += '<p><a href="' + resultURL + '">' + resultHeadline + '</a></p>' + '<span>' + result + '</span>' + '<a href="#">' + 'Read more...' + "</a>";
+            
         });
         
     }
 
 
     $('#ny-times').on('click', '.readMore', function() {
-        //get arcticle and display article 
+        $(this).siblings('.bodyText').toggle();
+        //get article and display article 
         //api call 
     });
 
@@ -412,26 +387,7 @@ $(function() {
 
 
 
-    // function getGuardianByKeyword(byKeyword) {
-    //     var url = 'http://content.guardianapis.com/tags';
-    //     $.ajax({
-    //         url: url,
-    //         type: 'GET',
-    //         format: "json",
-    //         data: {
-    //             'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-    //             'q': byKeyword,
-    //             'show-fields': 'trailText,headline,byline',
-
-    //             'use-date': 'published'
-    //         },
-    //         success: function(data) {
-    //             console.log(data);
-    //             var results = data;
-    //             showGuardian(results);
-    //         }
-    //     });
-    // }
+   
 
 
 
@@ -447,9 +403,9 @@ $(function() {
             var result = currentObject.fields.trailText;
             var resultHeadline = currentObject.fields.headline //.webTitle;
             var resultURL = currentObject.webUrl;
-            // var bodyText = currentObject.blocks.body.bodyTextSummary;
+            var body = currentObject.blocks.body['0'].bodyTextSummary;
 
-            var element = $("<p>");
+            var element = $("<div>");
             element.addClass('article');
 
             var headline = $('<a>');
@@ -468,17 +424,21 @@ $(function() {
             readMore.addClass('readMore');
             readMore.text('Read More...');
 
+            var bodyText = $('<div>');
+            bodyText.addClass('bodyText');
+            bodyText.text(body); 
+
+
             element.append(snippet);
             element.append(readMore);
+            element.append(bodyText);
 
             $('#guardian').append(element);
-            // if ($('#ny-times').show()) == true {
-            //     $('#ny-times').hide();
-            // }
+            
             $('#ny-times').fadeOut(500);            
             $('#guardian').fadeIn(1000);
 
-            // displayBody(resultURL);      
+                
 
            
         });
@@ -486,18 +446,16 @@ $(function() {
     }
 
 
- $('#guardian').on('click', '.readMore', function displayBody(resultURL) {
-        getGuardianArticle(resultURL);
-        foldOut();    
-
+$('#guardian').on('click', '.readMore', function() {
+        $(this).siblings('.bodyText').toggle();
     });
 
 
 
- function foldOUt(){
-    var paperfold = $('.hidden').paperfold();
-    $('.paperfold-toggle').click(paperfold.toggle);
- }
+ // function foldOUt(){
+ //    var paperfold = $('.hidden').paperfold();
+ //    $('.paperfold-toggle').click(paperfold.toggle);
+ // }
 
 
  function getGuardianArticle(resultURL) {
