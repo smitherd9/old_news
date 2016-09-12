@@ -93,7 +93,7 @@ h2 {
     background: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
-    ), url(../img/guardian.jpg) no-repeat center center fixed;
+    ), url(../img/guardian.JPG) no-repeat center center fixed;
     background-size: cover;
     color: white;
     display: inline-block;
