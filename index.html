@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 </head>
 
-<body>
+<body>    
     <!-- Bootstrap Navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -27,11 +27,21 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">About</a></li>
+                    <li><a href="#" id="about-screen">About</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div class="overlay">
+        <div class="content">
+            <p>Old News is an application that allows you to search for articles in recent history.</p>
+            <p>In a world saturated with news stories 24 hours a day,</p>
+            <p>it's important to take time out to remember how and why we got here.</p>
+        </div>
+        <button id="close-button">Close</button>
+    </div>
+
     <!--begin bg-carousel-->
     <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Wrapper for slides -->
@@ -54,15 +64,10 @@
     </div>
     <!-- .carousel -->
     <!--end bg-carousel-->
-
-
     <!-- TODO Try to implement grabbed headline photos into carousel.  These will change every day. -->
-
-
-
     <!--  Search the New York Times -->
     <div class="newYorkTimes">
-        <h2>Search the New York Times for news stories from 1851</h2>
+        <h2>Search The New York Times for news stories from 1851</h2>
         <section class="search">
             <div class="row">
                 <form class="article-search">
@@ -91,9 +96,6 @@
     </div>
     <div class="col-md-12" id="ny-times">
     </div>
-
-
-
     <!-- Search The Guardian -->
     <div class="guardian">
         <h2>Search The Guardian for news stories from 1999</h2>
@@ -124,9 +126,6 @@
         </section>
     </div>
     <div class="col-md-12" id="guardian"></div>
-
-
-        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

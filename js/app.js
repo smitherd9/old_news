@@ -1,19 +1,6 @@
 $(function() {
 
 
-    // You can make separate functions for each ajax call 
-    // You will likely need separate functions for each form
-
-    $('#ny-times').hide();
-    $('#guardian').hide();
-
-    $('.article-search').submit(function(e) {
-        e.preventDefault();
-
-
-    });
-
-
     // Function for Animate.Css // 
 
     $.fn.extend({
@@ -24,6 +11,38 @@ $(function() {
             });
         }
     });
+
+
+    // You can make separate functions for each ajax call 
+    // You will likely need separate functions for each form
+
+    $('#ny-times').hide();
+    $('#guardian').hide();
+    
+
+    $('.article-search').submit(function(e) {
+        e.preventDefault();
+
+
+    });
+
+
+    $('#about-screen').click(function(){        
+        $('.overlay').show();
+        $('.overlay').animateCss('slideInDown');
+    });
+
+    $('#close-button').click(function(){
+        $('.overlay').fadeOut(600);
+        // $('.overlay').animateCss('slideOutUp');
+        // setTimeout(function() {
+        //             $('.overlay').hide();
+        //         }, 600);
+        
+    });
+
+
+    
 
 
 
@@ -278,8 +297,9 @@ $(function() {
             var result = currentObject.snippet; // headline.print_headline;
             var resultHeadline = currentObject.headline.main; // byline.original;
             var resultURL = currentObject.web_url;
+            var body = currentObject.lead_paragraph;
 
-            var element = $("<p>");
+            var element = $("<div>");
             element.addClass('article');
 
             var headline = $('<a>');
@@ -298,21 +318,29 @@ $(function() {
             readMore.addClass('readMore');
             readMore.text('Read More...');
 
+            var bodyText = $('<div>');
+            bodyText.addClass('bodyText');
+            bodyText.text(body); 
+
+
             element.append(snippet);
             element.append(readMore);
+            element.append(bodyText);
 
             $('#ny-times').append(element);
+            
+            $('#guardian').fadeOut(500);            
             $('#ny-times').fadeIn(1000);
 
-
-            // html += '<p><a href="' + resultURL + '">' + resultHeadline + '</a></p>' + '<span>' + result + '</span>' + '<a href="#">' + 'Read more...' + "</a>";
+            
         });
         
     }
 
 
     $('#ny-times').on('click', '.readMore', function() {
-        //get arcticle and display article 
+        $(this).siblings('.bodyText').toggle();
+        //get article and display article 
         //api call 
     });
 
@@ -330,7 +358,7 @@ $(function() {
     /// By Date /// 
 
     function getGuardianByDate(guardianDate) {
-        var url = 'http://content.guardianapis.com/search?';
+        var url = 'https://content.guardianapis.com/search?';
         $.ajax({
             url: url,
             type: 'GET',
@@ -447,9 +475,9 @@ $(function() {
             var result = currentObject.fields.trailText;
             var resultHeadline = currentObject.fields.headline //.webTitle;
             var resultURL = currentObject.webUrl;
-            // var bodyText = currentObject.blocks.body.bodyTextSummary;
+            var body = currentObject.blocks.body['0'].bodyTextSummary;
 
-            var element = $("<p>");
+            var element = $("<div>");
             element.addClass('article');
 
             var headline = $('<a>');
@@ -468,17 +496,21 @@ $(function() {
             readMore.addClass('readMore');
             readMore.text('Read More...');
 
+            var bodyText = $('<div>');
+            bodyText.addClass('bodyText');
+            bodyText.text(body); 
+
+
             element.append(snippet);
             element.append(readMore);
+            element.append(bodyText);
 
             $('#guardian').append(element);
-            // if ($('#ny-times').show()) == true {
-            //     $('#ny-times').hide();
-            // }
+            
             $('#ny-times').fadeOut(500);            
             $('#guardian').fadeIn(1000);
 
-            // displayBody(resultURL);      
+                
 
            
         });
@@ -486,18 +518,16 @@ $(function() {
     }
 
 
- $('#guardian').on('click', '.readMore', function displayBody(resultURL) {
-        getGuardianArticle(resultURL);
-        foldOut();    
-
+$('#guardian').on('click', '.readMore', function() {
+        $(this).siblings('.bodyText').toggle();
     });
 
 
 
- function foldOUt(){
-    var paperfold = $('.hidden').paperfold();
-    $('.paperfold-toggle').click(paperfold.toggle);
- }
+ // function foldOUt(){
+ //    var paperfold = $('.hidden').paperfold();
+ //    $('.paperfold-toggle').click(paperfold.toggle);
+ // }
 
 
  function getGuardianArticle(resultURL) {

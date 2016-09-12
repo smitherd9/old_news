@@ -18,53 +18,29 @@ body {
 
 }
 
-/*.jumbotron {
-    background: url(../img/old_news_bkgrd14.jpg) no-repeat center center fixed;*/
-    /*background-color: rgba(0, 0, 0, 0.5);*/
-    /*background-size: cover;
-    background-color: #605a60 !important;
+.overlay {
+    display: none;
     color: white;
-}*/
-
-/*.jumbotron h1 {
-    font-size: 88px;
-}*/
-
-/*header {*/
-    /*background: url(../img/old_news_bkgrd3.jpg) no-repeat center center fixed;*/
-/*    padding: 20px;
-    width: 100%;
-    margin: 100px auto;
-    text-align: center;
-}
-
-header h1 {*/
-	/*background-color: rgba(0, 0, 0, 0.5);*/
- /*   border-radius: 5px;
-    color: #ccc6c9 !important;
-    display: inline;
-    padding: 0.5rem;
-    font-family: 'Shadows Into Light', cursive;
-    font-weight: bold;*/
-    /*font-size: 102px;*/
-  
-/*  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;    
-    
-}
-
-header h3 {*/
-	/*background-color: rgba(0, 0, 0, 0.5);*/
-    /*display: inline;*/
-  /*  padding: 0.5rem;
-    color: #fff;
+    background-color: black;
+    font-size: 16px;
     font-family: 'Poiret One', cursive;
-    font-weight: bold;
-    font-size: 24px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1000;
+}
 
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone; 
-}*/
+
+.bodyText {
+    display: none;
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    margin-top: 30px; 
+
+}
+
+
 
 h2 {
     color: white;
@@ -94,14 +70,14 @@ h2 {
     border-radius: 5px;
 }
 
-#ny-times > p {
+#ny-times > div > p {
     font-size: 16px;
     font-family: 'Poiret One', cursive;
     margin-top: 30px;    
 }
 
 
-#ny-times > p > a {
+#ny-times > div > a {
     color: #3f92f0;
     font-size: 24px;
     font-family: 'Poiret One', cursive;
@@ -126,14 +102,14 @@ h2 {
     border-radius: 5px;
 }
 
-#guardian > p {
+#guardian > div > p {
     font-size: 16px;
     font-family: 'Poiret One', cursive;
     margin-top: 30px;    
 }
 
 
-#guardian > p > a {
+#guardian > div > a {
     color: #ffff32;
     font-size: 24px;
     font-family: 'Poiret One', cursive;
