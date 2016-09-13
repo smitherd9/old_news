@@ -261,7 +261,8 @@ $(function() {
             snippet.text(result);
 
             var readMore = $('<a>');
-            // readMore.attr('href', bodyText);
+            readMore.attr('href', resultURL);
+            readMore.attr('target', '_blank');
             readMore.addClass('readMore');
             readMore.text('Read More...');
 
@@ -285,11 +286,11 @@ $(function() {
     }
 
 
-    $('#ny-times').on('click', '.readMore', function() {
-        $(this).siblings('.bodyText').toggle();
-        //get article and display article 
-        //api call 
-    });
+    // $('#ny-times').on('click', '.readMore', function() {
+    //     $(this).siblings('.bodyText').toggle();
+    //     //get article and display article 
+    //     //api call 
+    // });
 
 
 
