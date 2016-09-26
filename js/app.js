@@ -1,4 +1,13 @@
+var $ = require('jquery');
+var jqueryUi = require('jquery-ui');
+var getAjax = require('./ajax');
+var bootstrap = require('bootstrap');
+
+
+
 $(function() {
+
+
 
 
     // Function for Animate.Css // 
@@ -148,87 +157,87 @@ $(function() {
 
 
 
-    /// By Date ///
+    // /// By Date ///
 
 
-    function getNyTimesByDate(nyTimesDate) {
-        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+    // function getNyTimesByDate(nyTimesDate) {
+    //     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 
-        //For #by-date //
+    //     //For #by-date //
 
-        $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: "json",
-            data: {
-                'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-                'begin_date': nyTimesDate,
-                'end_date': nyTimesDate
-            },
-            success: function(data) {
-                console.log(data);
-                var results = data;
-                showNyTimes(results);
-            }
-        });
-    }
-
-
-
-
-
-
-    /// By date range /// 
-
-    function getNyTimesByDateRange(nyTimesDate1, nyTimesDate2) {
-        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-        $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: "json",
-            data: {
-                'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-                'begin_date': nyTimesDate1,
-                'end_date': nyTimesDate2
-            },
-            success: function(data) {
-                console.log(data);
-                var results = data;
-                showNyTimes(results);
-            }
-        });
-    }
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         dataType: "json",
+    //         data: {
+    //             'api-key': "3e086fa1430d466ba4a63a7818c323a1",
+    //             'begin_date': nyTimesDate,
+    //             'end_date': nyTimesDate
+    //         },
+    //         success: function(data) {
+    //             console.log(data);
+    //             var results = data;
+    //             showNyTimes(results);
+    //         }
+    //     });
+    // }
 
 
 
 
 
 
+    // /// By date range /// 
+
+    // function getNyTimesByDateRange(nyTimesDate1, nyTimesDate2) {
+    //     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         dataType: "json",
+    //         data: {
+    //             'api-key': "3e086fa1430d466ba4a63a7818c323a1",
+    //             'begin_date': nyTimesDate1,
+    //             'end_date': nyTimesDate2
+    //         },
+    //         success: function(data) {
+    //             console.log(data);
+    //             var results = data;
+    //             showNyTimes(results);
+    //         }
+    //     });
+    // }
 
 
-    /// By Topic /// 
 
 
-    function getNyTimesByTopic(byTopic, nyTimesDate) {
-        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-        $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: "json",
-            data: {
-                'api-key': "3e086fa1430d466ba4a63a7818c323a1",
-                'q': byTopic,                 
-                'begin_date': nyTimesDate,
-                'end_date': nyTimesDate
-            },
-            success: function(data) {
-                console.log(data);
-                var results = data;
-                showNyTimes(results);
-            }
-        });
 
-    }
+
+
+
+    // /// By Topic /// 
+
+
+    // function getNyTimesByTopic(byTopic, nyTimesDate) {
+    //     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         dataType: "json",
+    //         data: {
+    //             'api-key': "3e086fa1430d466ba4a63a7818c323a1",
+    //             'q': byTopic,                 
+    //             'begin_date': nyTimesDate,
+    //             'end_date': nyTimesDate
+    //         },
+    //         success: function(data) {
+    //             console.log(data);
+    //             var results = data;
+    //             showNyTimes(results);
+    //         }
+    //     });
+
+    // }
 
 
     
@@ -277,8 +286,26 @@ $(function() {
 
             $('#ny-times').append(element);
             
-            $('#guardian').fadeOut(500);            
-            $('#ny-times').fadeIn(1000);
+            $('#guardian').fadeOut(500);
+            $('#ny-times').show();            
+            $('#ny-times').animateCss('fadeInUp');
+
+            // $(element).scrollTop(100);
+
+            // if (element.height() > 100) {
+            //     alert("It's more than 100");
+                // $(document).scrollTop(100);
+            // }    
+
+
+            // $(document).scrollTop($(document).height(100));
+
+            // if height of div with articles inside --- add css class with vh 100 (viewport height)
+
+
+            // $(element).animate({scrollTop: -1}, 'slow');
+
+            
 
             
         });
@@ -303,88 +330,88 @@ $(function() {
 
 
 
-    /// By Date /// 
+    // /// By Date /// 
 
-    function getGuardianByDate(guardianDate) {
-        var url = 'http://content.guardianapis.com/search?';
-        $.ajax({
-            url: url,
-            type: 'GET',
-            format: "json",
-            data: {
-                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-                'from-date': guardianDate,
-                'to-date': guardianDate,
-                'use-date': 'published',
-                'show-fields': 'trailText,headline,byline',
-                'show-elements': 'image',
-                'show-blocks': 'body',
-                'shouldHideAdverts': true 
-            },
-            success: function(data) {
-                console.log(data);
-                var results = data;
-                showGuardian(results);
-            }
-        });
-    }
-
-
+    // function getGuardianByDate(guardianDate) {
+    //     var url = 'http://content.guardianapis.com/search?';
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         format: "json",
+    //         data: {
+    //             'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+    //             'from-date': guardianDate,
+    //             'to-date': guardianDate,
+    //             'use-date': 'published',
+    //             'show-fields': 'trailText,headline,byline',
+    //             'show-elements': 'image',
+    //             'show-blocks': 'body',
+    //             'shouldHideAdverts': true 
+    //         },
+    //         success: function(data) {
+    //             console.log(data);
+    //             var results = data;
+    //             showGuardian(results);
+    //         }
+    //     });
+    // }
 
 
 
 
-    /// By Date Range /// 
 
 
-    function getGuardianByDateRange(guardianDate1, guardianDate2) {
-        var url = 'http://content.guardianapis.com/search?';
-        $.ajax({
-            url: url,
-            type: 'GET',
-            format: "json",
-            // orderBy: "oldest",
-            data: {
-                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-                // 'orderBy': 'oldest',
-                'from-date': guardianDate1,
-                'to-date': guardianDate2,
-                'use-date': 'published',
-                'show-fields': 'trailText,headline,byline',
-                'show-blocks': 'body',
-                'shouldHideAdverts': true 
-            },
-            success: function(data) {
-                console.log(data);
-                var results = data;
-                showGuardian(results);
-            }
-        });
-    }
+    // /// By Date Range /// 
 
 
-    function getGuardianByTopic(byTopic, guardianDate) {
-        var url = 'http://content.guardianapis.com/search?';
-        $.ajax({
-            url: url,
-            type: 'GET',
-            format: "json",
-            data: {
-                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-                'q': byTopic,
-                'from-date': guardianDate,
-                'to-date': guardianDate,
-                'show-fields': 'trailText,headline,byline',
-                'shouldHideAdverts': true 
+    // function getGuardianByDateRange(guardianDate1, guardianDate2) {
+    //     var url = 'http://content.guardianapis.com/search?';
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         format: "json",
+    //         // orderBy: "oldest",
+    //         data: {
+    //             'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+    //             // 'orderBy': 'oldest',
+    //             'from-date': guardianDate1,
+    //             'to-date': guardianDate2,
+    //             'use-date': 'published',
+    //             'show-fields': 'trailText,headline,byline',
+    //             'show-blocks': 'body',
+    //             'shouldHideAdverts': true 
+    //         },
+    //         success: function(data) {
+    //             console.log(data);
+    //             var results = data;
+    //             showGuardian(results);
+    //         }
+    //     });
+    // }
 
-            },
-            success: function(data) {
-                console.log(data);
-                var results = data;
-                showGuardian(results);
-            }
-        });
-    }
+
+    // function getGuardianByTopic(byTopic, guardianDate) {
+    //     var url = 'http://content.guardianapis.com/search?';
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         format: "json",
+    //         data: {
+    //             'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+    //             'q': byTopic,
+    //             'from-date': guardianDate,
+    //             'to-date': guardianDate,
+    //             'show-fields': 'trailText,headline,byline',
+    //             'shouldHideAdverts': true 
+
+    //         },
+    //         success: function(data) {
+    //             console.log(data);
+    //             var results = data;
+    //             showGuardian(results);
+    //         }
+    //     });
+    // }
 
 
 
@@ -459,25 +486,25 @@ $('#guardian').on('click', '.readMore', function() {
  // }
 
 
- function getGuardianArticle(resultURL) {
-        var url = resultURL;
-        $.ajax({
-            url: url,
-            type: 'GET',
-            format: "json",
-            data: {
-                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-                'show-blocks': 'body',
-                'shouldHideAdverts': true                
-            },
-            success: function(data) {
-                console.log(data);
-                var results = data;
-                showGuardian(results);
-            }
-        });
-    }
 
+ // function getGuardianArticle(resultURL) {
+ //        var url = resultURL;
+ //        $.ajax({
+ //            url: url,
+ //            type: 'GET',
+ //            format: "json",
+ //            data: {
+ //                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+ //                'show-blocks': 'body',
+ //                'shouldHideAdverts': true                
+ //            },
+ //            success: function(data) {
+ //                console.log(data);
+ //                var results = data;
+ //                showGuardian(results);
+ //            }
+ //        });
+ //    }
 
 
     /////  jQuery Datepicker UI     /////

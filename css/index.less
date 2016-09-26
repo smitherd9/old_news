@@ -1,3 +1,8 @@
+@shade: rgba(0, 0, 0, 0.5);
+@poiret: 'Poiret One', cursive;
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -14,10 +19,24 @@ footer {
 }
 
 
+a {
+    color: #23ffaa;
+
+    &:hover {
+    	color: #8f3e97;
+    }
+
+    &.readmore {
+    	color: #ff0000;
+    	font-size: 16px;
+    }
+}
+
+
 
 .navbar {
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: @shade;
     border-radius: 0;
     border: none;
     height: 70px;   
@@ -30,7 +49,7 @@ footer {
     color: white;
     background-color: black;
     font-size: 16px;
-    font-family: 'Poiret One', cursive;
+    font-family: @poiret;
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -39,19 +58,16 @@ footer {
 }
 
 
-.bodyText {
-    display: none;
-    font-size: 16px;
-    font-family: 'Poiret One', cursive;
-    margin-top: 30px; 
+.bodyText {    
+    margin-top: 30px;
+    .overlay; 
 
 }
 
 
-
 h2 {
     color: white;
-    font-family: 'Poiret One', cursive;
+    font-family: @poiret;
     font-weight: normal;
     margin-left: 3.5em;
    
@@ -64,78 +80,6 @@ h2 {
     padding: 0.5em;
 }
 
-#ny-times {
-    background: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ), url(../img/ny-times-building2.jpg) no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    display: inline-block;
-    float: left;    
-    margin-top: 40px;
-    border-radius: 5px;
-}
-
-#ny-times > div > p {
-    font-size: 20px;
-    font-family: 'Poiret One', cursive;
-    margin-top: 30px;    
-}
-
-
-#ny-times > div > a {
-    color: #3f92f0;
-    font-size: 16px;
-    font-family: 'Poiret One', cursive;
-    font-weight: bold;
-}
-
-#ny-times > div > a.headline {
-    color: #3f92f0;
-    font-size: 24px;
-    font-family: 'Poiret One', cursive;
-    font-weight: bold;
-}
-
-#ny-times > img {
-    padding: 20px 20px;
-    margin: auto
-}
-
-#guardian {
-    background: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ), url(../img/guardian.JPG) no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    display: inline-block;
-    float: right;    
-    margin-top: 40px;
-    border-radius: 5px;
-}
-
-#guardian > div > p {
-    font-size: 16px;
-    font-family: 'Poiret One', cursive;
-    margin-top: 30px;    
-}
-
-
-#guardian > div > a {
-    color: #ffff32;
-    font-size: 24px;
-    font-family: 'Poiret One', cursive;
-    font-weight: bold;
-}
-
-a.readMore {
-    color: #ff0000;
-    font-size: 16px;
-}
-
-
 
 .guardian {
     display: inline-block;
@@ -146,6 +90,88 @@ a.readMore {
 }
 
 
+
+
+#ny-times {
+    background: linear-gradient(
+      @shade,
+      @shade
+    ), url(../img/ny-times-building2.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: inline-block;
+    float: left;    
+    margin-top: 40px;
+    border-radius: 5px;
+
+    img {
+    	padding: 20px 20px;
+    	margin: auto
+    }
+
+    div > p {
+    	font-size: 20px;
+    	font-family: @poiret;
+    	margin-top: 30px;  
+    }
+
+    div > a {
+    	color: #3f92f0;
+    	font-size: 16px;
+    	font-family: @poiret;
+    	font-weight: bold;
+
+    	.headline {
+    		color: #3f92f0;
+    		font-size: 24px;
+    		font-family: @poiret;
+    		font-weight: bold;
+    	}
+    }
+}
+
+
+
+
+#guardian {
+    background: linear-gradient(
+      @shade,
+      @shade
+    ), url(../img/guardian.JPG) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: inline-block;
+    float: right;    
+    margin-top: 40px;
+    border-radius: 5px;
+
+    div > p {
+    	font-size: 16px;
+    	font-family: @poiret;
+    	margin-top: 30px;  
+    }
+
+    div > a {
+    	color: #ffff32;
+    	font-size: 24px;
+    	font-family: @poiret;
+    	font-weight: bold;
+    }
+
+}
+
+
+.navbar-brand {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold italic;
+    font-size: 28px;
+}
+
+
+.navbar-right {
+    .navbar-brand;
+}
 
 
   /*  Button Styles  */
@@ -179,36 +205,9 @@ a.readMore {
 }
 
 
-a {
-    color: #23ffaa;
-}
-
-a:hover {
-    color: #8f3e97;
-}
-
-.navbar-brand {
-    color: white;
-    font-family: 'Dancing Script', cursive;
-    font-weight: bold italic;
-    font-size: 28px;
-}
 
 
-.navbar-right {
-    color: white;
-    font-family: 'Dancing Script', cursive;
-    font-weight: bold italic;
-    font-size: 28px;
-}
-
-
-
-
-
-
-
-  /*  Carousel pictures and styles  */
+ /*  Carousel pictures and styles  */
 
 
 
@@ -254,27 +253,28 @@ a:hover {
 }
 
 
-.carousel-overlay h1 {
-    border-radius: 5px;
-    color: #ccc6c9 !important;
-    display: inline;
-    padding: 0.5rem;
-    font-family: 'Shadows Into Light', cursive;
-    font-weight: bold;
-    font-size: 8em;
+.carousel-overlay {    
+    box-decoration-break: clone;
 
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;  
+    h1 {
+    	border-radius: 5px;
+    	color: #ccc6c9 !important;
+    	display: inline;
+    	padding: 0.5rem;
+    	font-family: 'Shadows Into Light', cursive;
+    	font-weight: bold;
+    	font-size: 8em;
+    }
+
+    h3 {
+    	padding: 0.5rem;
+    	color: #fff;
+    	font-family: @poiret;
+    	font-weight: bold;
+    	font-size: 24px;
+    }
 }
 
 
-.carousel-overlay h3 {
-    padding: 0.5rem;
-    color: #fff;
-    font-family: 'Poiret One', cursive;
-    font-weight: bold;
-    font-size: 24px;
 
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;  
-}
+

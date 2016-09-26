@@ -1,0 +1,61 @@
+{
+  "name": "old_news",
+  "version": "1.0.0",
+  "description": "An app to get old news stories from the ny times and the guardian",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mkdir": "mkdir build",
+    "clean": "rm -rf build",
+    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js",
+    "watch": "npm run watch:html & npm run watch:css & npm run watch:js",
+    "build:html": "npm run clean:html && cp index.html build/",
+    "clean:html": "rm -f build/index.html",
+    "watch:html": "npm run build:html && chokidar index.html -c 'npm run build:html'",
+    "build:css": "npm run build:css:unminified && npm run build:css:minified",
+    "watch:css": "npm run watch:css:unminified & npm run watch:css:minified",
+    "clean:css": "npm run clean:css:unminified && npm run clean:css:minified",
+    "build:css:unminified": "npm run clean:css:unminified && lessc --source-map css/index.less build/index.css",
+    "watch:css:unminified": "npm run build:css:unminified && chokidar 'css/**/*.(css|less)' -c 'npm run build:css:unminified'",
+    "clean:css:unminified": "rm -f build/index.css build/index.css.map",
+    "build:css:minified": "npm run clean:css:minified && lessc --clean-css --source-map css/index.less build/index.min.css",
+    "watch:css:minified": "npm run build:css:minified && chokidar 'css/**/*.(css|less)' -c 'npm run build:css:minified'",
+    "clean:css:minified": "rm -f build/index.min.css build/index.min.css.map",
+    "build:js": "npm run build:js:unminified && npm run build:js:minified",
+    "watch:js": "npm run watch:js:unminified & npm run watch:js:minified",
+    "clean:js": "npm run clean:js:unminified && npm run clean:js:minified",
+    "build:js:unminified": "npm run clean:js:unminified && webpack",
+    "watch:js:unminified": "npm run build:js:unminified && webpack --watch",
+    "clean:js:unminified": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map",
+    "build:js:minified": "npm run clean:js:minified && webpack --minify",
+    "watch:js:minified": "npm run build:js:minified && webpack --watch --minify",
+    "clean:js:minified": "rm -f build/$npm_package_name.$npm_package_version.min.js build/$npm_package_name.$npm_package_version.min.js.map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smitherd9/old_news.git"
+  },
+  "author": "Daniel Smither",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smitherd9/old_news/issues"
+  },
+  "homepage": "https://github.com/smitherd9/old_news#readme",
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0",
+    "jquery-ui": "^1.12.1",
+    "normalize.css": "^4.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "chokidar-cli": "^1.2.0",
+    "less": "^2.7.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "uglify-js": "^2.7.3",
+    "webpack": "^1.13.2"
+  }
+}
