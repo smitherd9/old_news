@@ -220,6 +220,7 @@ $(function() {
     
 
     function showNyTimes(results) {
+        $('#ny-times').html('');
         var html = "";
         var docs = results.response.docs;
         console.log(docs);
@@ -259,9 +260,9 @@ $(function() {
             element.append(readMore);
             element.append(bodyText);
 
-            $('#ny-times').append(element);
             
-            $('#guardian').fadeOut(500);            
+            $('#ny-times').append(element);          
+                      
             $('#ny-times').fadeIn(1000);
 
             
@@ -379,6 +380,7 @@ $(function() {
 
 
     function showGuardian(results) {
+        $('#guardian').html('');
         var html = "";
         var guardianStories = results.response.results;
         console.log(guardianStories);
@@ -418,9 +420,8 @@ $(function() {
             element.append(readMore);
             element.append(bodyText);
 
-            $('#guardian').append(element);
-            
-            $('#ny-times').fadeOut(500);            
+            $('#guardian').append(element);           
+        
             $('#guardian').fadeIn(1000);
 
                 
