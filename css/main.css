@@ -345,27 +345,19 @@ a:hover {
 
 .carousel-overlay h1 {
     border-radius: 5px;
-    color: #ccc6c9 !important;
-    display: inline;
-    padding: 0.5rem;
+    color: white;    
     font-family: 'Special Elite', cursive;
     font-weight: bold;
     font-size: 8em;
 
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;  
 }
 
 
 .carousel-overlay h3 {
-    padding: 0.5rem;
     color: #fff;
     font-family: 'Special Elite', cursive;
-    font-weight: bold;
     font-size: 24px;
 
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;  
 }
 
 
