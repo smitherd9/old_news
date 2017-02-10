@@ -26,23 +26,7 @@ $(function() {
 
     });
 
-
-    $('#about-screen').click(function(){        
-        $('.overlay').show();
-        $('.overlay').animateCss('slideInDown');
-    });
-
-    $('#close-button').click(function(){
-        $('.overlay').fadeOut(600);
-        // $('.overlay').animateCss('slideOutUp');
-        // setTimeout(function() {
-        //             $('.overlay').hide();
-        //         }, 600);
-        
-    });
-
-
-    
+ 
 
 
 
