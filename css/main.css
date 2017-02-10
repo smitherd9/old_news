@@ -3,7 +3,31 @@
 }
 
 body {
-    background-color: #605a60 !important;
+    /*background-color: #605a60 !important;  */
+
+    /*What Lies Beyond*/
+
+/*    background: #F0F2F0; 
+    background: -webkit-linear-gradient(to left, #F0F2F0 , #000C40); 
+    background: linear-gradient(to left, #F0F2F0 , #000C40); */
+
+    /*Royal*/
+
+
+
+    background: #141E30; 
+    background: -webkit-linear-gradient(to left, #141E30 , #243B55); 
+    background: linear-gradient(to left, #141E30 , #243B55); 
+        
+
+
+/*Frost*/
+
+/*    background: #000428; 
+    background: -webkit-linear-gradient(to left, #000428 , #004e92); 
+    background: linear-gradient(to left, #000428 , #004e92); */
+        
+        
 }
 
 
@@ -17,6 +41,23 @@ body {
     
 
 }
+
+.navbar-brand {
+    font-family: 'Special Elite', cursive;
+    color: white;
+    font-weight: bold italic;
+    font-size: 28px;
+}
+
+
+
+.navbar-right {
+    color: white;
+    font-family: 'Special Elite', cursive;  
+    font-weight: bold italic;
+    font-size: 28px;
+}
+
 
 .overlay {
     display: none;
@@ -50,11 +91,24 @@ h2 {
    
 }
 
+label {
+    color: white;
+}
 
-.article-search {
-    display: inline-block;
-    margin-left: 3em;
+
+.article-search {       
+    padding: 1em;
+}
+
+.article {
+    padding: 2em;
+    border-bottom: 1px dashed white;
+    margin: 1em;
+}
+
+.search {  
     padding: 0.5em;
+    margin-bottom: 7em;
 }
 
 #ny-times {
@@ -64,10 +118,12 @@ h2 {
     ), url(../img/ny-times-building2.jpg) no-repeat center center fixed;
     background-size: cover;
     color: white;
-    display: inline-block;
-    float: left;    
-    margin-top: 40px;
+    text-align: center;
+    padding-right: 5em;
     border-radius: 5px;
+    overflow-y: auto;
+    max-height: 482px;
+    margin-right: 2em;
 }
 
 #ny-times > div > p {
@@ -96,10 +152,14 @@ h2 {
     ), url(../img/guardian.JPG) no-repeat center center fixed;
     background-size: cover;
     color: white;
-    display: inline-block;
-    float: right;    
-    margin-top: 40px;
+    text-align: center;
     border-radius: 5px;
+    padding-right: 5em;
+    overflow-y: auto;
+    max-height: 482px;
+    margin-top: 3em;
+    margin-left: 1em;
+    width: 48%;
 }
 
 #guardian > div > p {
@@ -116,6 +176,10 @@ h2 {
     font-weight: bold;
 }
 
+#search-section {
+    padding-top: 7em;
+}
+
 a.readMore {
     color: #ff0000;
     font-size: 16px;
@@ -124,11 +188,35 @@ a.readMore {
 
 
 .guardian {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-bottom: 1px solid white;
+    padding-top: 5em;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url('../img/Big-Ben-at-night.jpg');
+    background-size: cover;
+    margin-left: 1em;
+    margin-top: 3em;
+
 }
 
 .newYorkTimes {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-top: 5em;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url('../img/nyc.jpg');
+    background-size: cover;
+    margin-left: 1em;
+
 }
 
 
@@ -186,25 +274,6 @@ a:hover {
     color: #8f3e97;
 }
 
-.navbar-brand {
-    color: white;
-    font-family: 'Dancing Script', cursive;
-    font-weight: bold italic;
-    font-size: 28px;
-}
-
-
-.navbar-right {
-    color: white;
-    font-family: 'Dancing Script', cursive;
-    font-weight: bold italic;
-    font-size: 28px;
-}
-
-
-
-
-
 
 
   /*  Carousel pictures and styles  */
@@ -212,18 +281,35 @@ a:hover {
 
 
 .slide1, .slide2, .slide3 {
-    min-height: 560px;                  /* Must have a height or min-height set due to use of background images */
+    min-height: 560px;
+}
+
+.slide1 {
+
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url(../img/old_news_bkgrd15.jpg);
     background-size: cover;
     background-position: center center;
 }
-.slide1 {
-    background-image: url(../img/old_news_bkgrd15.jpg);
-}
 .slide2 {
-    background-image: url(../img/old_news_bkgrd16.jpg);
+        background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url(../img/old_news_bkgrd16.jpg);
+      background-size: cover;
+      background-position: center center;   
+
 }
 .slide3 {
-    background-image: url(../img/old_news_bkgrd17.jpg);
+        background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url(../img/old_news_bkgrd17.jpg);
+        background-size: cover;
+        background-position: center center; 
+
 }
 
 
@@ -262,7 +348,7 @@ a:hover {
     color: #ccc6c9 !important;
     display: inline;
     padding: 0.5rem;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Special Elite', cursive;
     font-weight: bold;
     font-size: 8em;
 
@@ -274,10 +360,19 @@ a:hover {
 .carousel-overlay h3 {
     padding: 0.5rem;
     color: #fff;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Special Elite', cursive;
     font-weight: bold;
     font-size: 24px;
 
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;  
+}
+
+
+
+footer {
+    height: 8em;
+    width: 100%;
+    background-color: black;
+    margin-top: 8em;
 }

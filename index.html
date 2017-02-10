@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Poiret+One|Dancing+Script|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Poiret+One|Dancing+Script|Shadows+Into+Light|Special+Elite" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 </head>
 
@@ -27,11 +27,34 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" id="about-screen">About</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#aboutModal" id="about-screen">About</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Modal -->
+<div id="aboutModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">About Old News</h4>
+      </div>
+      <div class="modal-body">
+        <p>Old News is an application that allows you to search for articles in recent history.</p>
+        <p>In a world saturated with news stories 24 hours a day,
+        it's important to take time out to remember how and why we got here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <div class="overlay">
         <div class="content">
@@ -65,72 +88,108 @@
     <!-- .carousel -->
     <!--end bg-carousel-->
     <!-- TODO Try to implement grabbed headline photos into carousel.  These will change every day. -->
+
     <!--  Search the New York Times -->
-    <div class="newYorkTimes">
-        <h2>Search The New York Times for news stories from 1851</h2>
+    <div class="row" id="search-section">
+        <div class="col-md-6">
+        <div class="newYorkTimes">
+        <h2>Search The New York Times</h2>
+        <h2>for stories from 1851</h2>
         <section class="search">
-            <div class="row">
                 <form class="article-search">
                     <label>Search by Date</label>
                     <input type="text" name="by-date" id="by-date-nyTimes">
                     <button class="btn-search" id="btn-by-date-nyTimes">Search</button>
                 </form>
-            </div>
-            <div class="row">
+
                 <form class="article-search">
                     <label>Search by Date Range</label>
                     <input type="text" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Start Date" required>
                     <input type="text" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" required>
                     <button class="btn-search" id="btn-by-date-range-nyTimes">Search</button>
                 </form>
-            </div>
-            <div class="row">
+
                 <form class="article-search">
                     <label>Search by Topic</label>
                     <input type="text" name="by-topic" id="by-topic-nyTimes" placeholder="Ex: Politics, Opinion, Sports">
                     <input type="text" name="by-topic" id="by-topic-date-nyTimes" placeholder="Enter a date">
                     <button class="btn-search" id="btn-by-topic-nyTimes">Search</button>
                 </form>
-            </div>
+            
         </section>
+        </div>
+        </div>
+
+        <div class="col-md-6">    
+            <div id="ny-times"></div>
+        </div>
     </div>
-    <div class="col-md-12" id="ny-times">
-    </div>
+
+    <div class="row">
+        <div class="col-md-6">
     <!-- Search The Guardian -->
-    <div class="guardian">
-        <h2>Search The Guardian for news stories from 1999</h2>
+        <div class="guardian">
+        <h2>Search The Guardian</h2>
+        <h2>for stories from 1999</h2>
         <section class="search">
-            <div class="row">
+
                 <form class="article-search">
                     <label>Search by Date</label>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
                     <input type="text" name="by-date" id="by-date-guardian">
                     <button class="btn-search" id="btn-by-date-guardian">Search</button>
                 </form>
-            </div>
-            <div class="row">
+
                 <form class="article-search">
                     <label>Search by Date Range</label>
                     <input type="text" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" required>
                     <input type="text" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
                     <button class="btn-search" id="btn-by-date-range-guardian">Search</button>
                 </form>
-            </div>
-            <div class="row">
+
                 <form class="article-search">
                     <label>Search by Topic</label>
                     <input type="text" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports">
                     <input type="text" name="by-topic" id="by-topic-date-guardian" placeholder="Enter a date">
                     <button class="btn-search" id="btn-by-topic-guardian">Search</button>
                 </form>
-            </div>
+          
         </section>
+        </div>
+        </div>
+        <div class="col-md-6" id="guardian"></div>
     </div>
-    <div class="col-md-12" id="guardian"></div>
+
+    <footer>
+        <div class="container" id="github">
+            <div class="row">
+                <div class="col-sm-4"><a href="https://www.linkedin.com/in/daniel-smither-62b871130" target="_blank"><i class="fa fa-linkedin-square fa-3x hvr-grow-rotate" aria-hidden="true"></i></a>
+                    <a href="https://github.com/smitherd9" target="_blank"><h4>LinkedIn</h4></a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="https://github.com/smitherd9" target="_blank"><i class="fa fa-github fa-3x hvr-grow-rotate" aria-hidden="true"></i></a>
+                    <a href="https://github.com/smitherd9" target="_blank"><h4>GitHub</h4></a>
+                </div>
+                <div class="col-sm-4"><a href="https://twitter.com/DanielSmither2" target="_blank"><i class="fa fa-twitter fa-3x hvr-grow-rotate" aria-hidden="true"></i></a>
+                    <a href="https://github.com/smitherd9" target="_blank"><h4>Twitter</h4></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <span><i class="fa fa-copyright" aria-hidden="true"></i>2016 Daniel Smither</span>
+            <a href="mailto:smitherd9@gmail.com">smitherd9@gmail.com</a>
+        </div>
+    </footer>
+        
+    </footer>
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/moment.js"></script>
     <script src="js/paperfold.min.js"></script>
+    <script src="https://use.fontawesome.com/346d870b8b.js"></script>
     <script src="js/app.js"></script>
 </body>
 
