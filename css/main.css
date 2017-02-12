@@ -59,19 +59,6 @@ body {
 }
 
 
-.overlay {
-    display: none;
-    color: white;
-    background-color: black;
-    font-size: 16px;
-    font-family: 'Poiret One', cursive;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    text-align: center;
-    z-index: 1000;
-}
-
 
 .bodyText {
     display: none;
@@ -123,7 +110,8 @@ label {
     border-radius: 5px;
     overflow-y: auto;
     max-height: 482px;
-    margin-right: 2em;
+    margin-left: 1em;
+    margin-top: 2em;
 }
 
 #ny-times > div > p {
@@ -157,7 +145,7 @@ label {
     padding-right: 5em;
     overflow-y: auto;
     max-height: 482px;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-left: 1em;
     width: 48%;
 }
@@ -192,14 +180,14 @@ a.readMore {
     flex-direction: column;
     flex-wrap: wrap;
     border-bottom: 1px solid white;
+    border-top: 1px solid white;
     padding-top: 5em;
     background: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ), url('../img/Big-Ben-at-night.jpg');
     background-size: cover;
-    margin-left: 1em;
-    margin-top: 3em;
+
 
 }
 
@@ -216,6 +204,7 @@ a.readMore {
     ), url('../img/nyc.jpg');
     background-size: cover;
     margin-left: 1em;
+    height: 481.2px;
 
 }
 
@@ -345,27 +334,19 @@ a:hover {
 
 .carousel-overlay h1 {
     border-radius: 5px;
-    color: #ccc6c9 !important;
-    display: inline;
-    padding: 0.5rem;
+    color: white;    
     font-family: 'Special Elite', cursive;
     font-weight: bold;
     font-size: 8em;
 
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;  
 }
 
 
 .carousel-overlay h3 {
-    padding: 0.5rem;
     color: #fff;
     font-family: 'Special Elite', cursive;
-    font-weight: bold;
     font-size: 24px;
 
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;  
 }
 
 
