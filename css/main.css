@@ -110,7 +110,8 @@ label {
     border-radius: 5px;
     overflow-y: auto;
     max-height: 482px;
-    margin-right: 2em;
+    margin-left: 1em;
+    margin-top: 2em;
 }
 
 #ny-times > div > p {
@@ -144,7 +145,7 @@ label {
     padding-right: 5em;
     overflow-y: auto;
     max-height: 482px;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-left: 1em;
     width: 48%;
 }
@@ -186,7 +187,7 @@ a.readMore {
       rgba(0, 0, 0, 0.5)
     ), url('../img/Big-Ben-at-night.jpg');
     background-size: cover;
-    margin-left: 1em;
+
 
 }
 
