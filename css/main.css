@@ -209,6 +209,24 @@ a.readMore {
 }
 
 
+/*Font Awesome Styles*/
+
+.fa-github {   
+    color: white;
+}
+
+.fa-linkedin-square {
+    color: white;
+}
+
+.fa-twitter {
+    color: white;
+}
+
+.fa-copyright { 
+    border-radius: 5px; 
+}
+
 
 
   /*  Button Styles  */
@@ -350,10 +368,33 @@ a:hover {
 }
 
 
-
 footer {
-    height: 8em;
+    height: 100%;
     width: 100%;
     background-color: black;
     margin-top: 8em;
+}
+
+.footer-copyright {
+    text-align: center;
+}
+
+.footer-copyright > a {
+    display: block;
+    
+}
+
+
+#footer-container {
+    text-align: center;
+    padding-top: 5em;
+
+}
+
+#footer-container > a {
+    color: white;    
+}
+
+#footer-container > a:hover {
+    color: blue;    
 }
