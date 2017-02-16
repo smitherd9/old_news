@@ -20,9 +20,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+
                 </button>
                 <a class="navbar-brand" href="#">Old News</a>
             </div>
@@ -58,9 +56,9 @@
 </div>
 
     <!--begin bg-carousel-->
-    <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+<!--     <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel"> -->
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
+<!--         <div class="carousel-inner">
             <div class="item active">
                 <div class="slide1"></div>
             </div>
@@ -70,30 +68,65 @@
             <div class="item">
                 <div class="slide3"></div>
             </div>
-        </div>
+        </div> -->
         <!-- .carousel-inner -->
-        <div class="container carousel-overlay text-center">
+<!--         <div class="container carousel-overlay text-center">
             <h1>Old News</h1>
             <h3>In a world of 24 hour news, a pause button is necessary.</h3>
         </div>
-    </div>
+    </div> -->
     <!-- .carousel -->
     <!--end bg-carousel-->
     <!-- TODO Try to implement grabbed headline photos into carousel.  These will change every day. -->
+
+
+    <div class="container-fluid">
 
     <!--  Search the New York Times -->
     <div class="row" id="search-section">
         <div class="col-md-6">
         <div class="newYorkTimes">
-        <h2>Search The New York Times for stories from 1851</h2>
+        <h2>Search The New York Times for stories from 1851</h2>        
+        </div>
+        </div>
+
+        <div class="col-md-6">
+    <!-- Search The Guardian -->
+        <div class="guardian">
+        <h2>Search The Guardian</h2>
+        <h2>for stories from 1999</h2>
+        
+        </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
         <section class="search">
-                <form class="article-search">
+            <div class="input-group">
+                <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Search for news stories by a specific date" aria-describedby="basic-addon1">
+                <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-date-nyTimes">Search</button>
+                </span>
+            </div>
+
+<!--                 <form class="article-search">
                     <label>Search by Date</label>
                     <input type="text" name="by-date" id="by-date-nyTimes">
                     <button class="btn-search" id="btn-by-date-nyTimes">Search</button>
-                </form>
+                </form> -->
 
-                <form class="article-search">
+                <div class="input-group">
+                <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Search for news stories by a date range" aria-describedby="basic-addon1" required>
+                <input type="text" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" aria-describedby="basic-addon1" required>
+                <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-date-range-nyTimes">Search</button>
+                </span>
+                </div>
+
+<!--                 <form class="article-search">
                     <label>Search by Date Range</label>
                     <input type="text" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Start Date" required>
                     <input type="text" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" required>
@@ -105,47 +138,76 @@
                     <input type="text" name="by-topic" id="by-topic-nyTimes" placeholder="Ex: Politics, Opinion, Sports">
                     <input type="text" name="by-topic" id="by-topic-date-nyTimes" placeholder="Enter a date">
                     <button class="btn-search" id="btn-by-topic-nyTimes">Search</button>
-                </form>
+                </form> -->
+
+                <div class="input-group">
+                <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Search by topic" aria-describedby="basic-addon1">
+                <input type="text" name="by-topic" id="by-topic-date-nyTimes" placeholder="Enter a date" aria-describedby="basic-addon1">
+                <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-topic-nyTimes">Search</button>
+                </span>
+                </div>
             
         </section>
         </div>
-        </div>
+        
 
-        <div class="col-md-6">
-    <!-- Search The Guardian -->
-        <div class="guardian">
-        <h2>Search The Guardian</h2>
-        <h2>for stories from 1999</h2>
-        <section class="search">
+        
+            <div class="col-md-6">
+                <section class="search">
 
-                <form class="article-search">
+                <div class="input-group">
+                <input type="text" class="form-control" name="by-date" id="by-date-guardian" placeholder="Search for news stories by a specific date" aria-describedby="basic-addon1">
+                <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-date-guardian">Search</button>
+                </span>
+                </div>
+
+<!--                 <form class="article-search">
                     <label>Search by Date</label>
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     <input type="text" name="by-date" id="by-date-guardian">
                     <button class="btn-search" id="btn-by-date-guardian">Search</button>
                 </form>
+ -->
 
-                <form class="article-search">
+                <div class="input-group">
+                <input type="text" class="form-control" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" aria-describedby="basic-addon1" required>
+                <input type="text" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
+                <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-date-range-guardian">Search</button>
+                </span>
+                </div>
+
+<!--                 <form class="article-search">
                     <label>Search by Date Range</label>
                     <input type="text" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" required>
                     <input type="text" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
                     <button class="btn-search" id="btn-by-date-range-guardian">Search</button>
-                </form>
+                </form> -->
 
-                <form class="article-search">
+
+                <div class="input-group">
+                <input type="text" class="form-control" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
+                <input type="text" name="by-topic" id="by-topic-date-guardian" placeholder="Enter a date">                
+                <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-date-range-guardian">Search</button>
+                </span>
+                </div>
+
+<!--                 <form class="article-search">
                     <label>Search by Topic</label>
                     <input type="text" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports">
                     <input type="text" name="by-topic" id="by-topic-date-guardian" placeholder="Enter a date">
                     <button class="btn-search" id="btn-by-topic-guardian">Search</button>
-                </form>
+                </form> -->
           
-        </section>
+            </section>
+            </div>
+            </div>
         </div>
-        </div>
 
-
-    </div>
-
+<!-- Search Results Section -->
     <div class="row">
         <div class="col-md-6">    
             <div id="ny-times"></div>
@@ -153,24 +215,19 @@
         <div class="col-md-6" id="guardian"></div>
     </div>
 
-    <footer>
+<footer class="footer">
         <div class="container" id="footer-container">
-            <div class="row">
-                <div class="col-sm-4"><a href="https://www.linkedin.com/in/daniel-smither-62b871130" target="_blank"><i class="fa fa-linkedin-square fa-3x hvr-grow-rotate" aria-hidden="true"></i></a>
-                    <a href="https://github.com/smitherd9" target="_blank"><h4>LinkedIn</h4></a>
-                </div>
-                <div class="col-sm-4">
-                    <a href="https://github.com/smitherd9" target="_blank"><i class="fa fa-github fa-3x hvr-grow-rotate" aria-hidden="true"></i></a>
-                    <a href="https://github.com/smitherd9" target="_blank"><h4>GitHub</h4></a>
-                </div>
-                <div class="col-sm-4"><a href="https://twitter.com/DanielSmither2" target="_blank"><i class="fa fa-twitter fa-3x hvr-grow-rotate" aria-hidden="true"></i></a>
-                    <a href="https://github.com/smitherd9" target="_blank"><h4>Twitter</h4></a>
+            <div class="row" id="footer-row">
+                <div class="col-sm-12">
+                <span>
+                    <p><i class="fa fa-copyright" aria-hidden="true"></i>2016 A project by
+                    <a href="https://smitherd9.github.io">
+                    Daniel Smither
+                    </a>
+                </span>
+                    </p>
                 </div>
             </div>
-        </div>
-        <div class="footer-copyright">
-            <span><a href="https://smitherd9.github.io"><i class="fa fa-copyright" aria-hidden="true"></i>2016 Daniel Smither</a></span>
-            <a href="mailto:smitherd9@gmail.com">smitherd9@gmail.com</a>
         </div>
     </footer>
         

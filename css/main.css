@@ -74,7 +74,6 @@ h2 {
     color: white;
     font-family: 'Poiret One', cursive;
     font-weight: normal;
-    margin-left: 3.5em;
    
 }
 
@@ -181,12 +180,13 @@ a.readMore {
     flex-wrap: wrap;
     border-bottom: 1px solid white;
     border-top: 1px solid white;
-    padding-top: 5em;
+    text-align: center;
     background: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ), url('../img/Big-Ben-at-night.jpg');
     background-size: cover;
+    height: 481.2px;
 
 
 }
@@ -197,7 +197,7 @@ a.readMore {
     flex-wrap: wrap;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    padding-top: 5em;
+    text-align: center;
     background: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
@@ -206,6 +206,11 @@ a.readMore {
     margin-left: 1em;
     height: 481.2px;
 
+}
+
+.input-group {
+    display: inline-flex;
+    padding: 1em;
 }
 
 
@@ -232,7 +237,7 @@ a.readMore {
   /*  Button Styles  */
 
 .btn-search {        
-    -moz-box-shadow: 3px 4px 0px 0px #1564ad;
+/*    -moz-box-shadow: 3px 4px 0px 0px #1564ad;
     -webkit-box-shadow: 3px 4px 0px 0px #1564ad;
     box-shadow: 3px 4px 0px 0px #1564ad;
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
@@ -240,13 +245,15 @@ a.readMore {
     background:-webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
     background:-o-linear-gradient(top, #79bbff 5%, #378de5 100%);
     background:-ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
-    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
-    background-color:#79bbff;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);*/
+    /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
+    background-color:#79bbff;*/
+/*    -moz-border-radius:5px;
+    -webkit-border-radius:5px;*/
     border-radius:5px;
     border:1px solid #337bc4;
+    background: transparent;
+    margin-left: 3em;
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
@@ -254,8 +261,8 @@ a.readMore {
     font-size:17px;
     font-weight:bold;
     padding:1px 25px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #528ecc;
+/*    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;*/
 }
 .btn-search:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
@@ -368,24 +375,40 @@ a:hover {
 }
 
 
-footer {
+/*footer {
     height: 100%;
     width: 100%;
     background-color: black;
     margin-top: 8em;
+}*/
+
+.footer {
+    position: absolute;
+    /*bottom: 0;*/
+    width: 100%;
+    height: 50px;
+    background: #000000; 
+    background: -webkit-linear-gradient(to top, #000000 , #434343); 
+    background: linear-gradient(to top, #000000 , #434343);
+    text-align: center;
+
 }
 
-.footer-copyright {
+.footer p {
+    color: white;
+}
+
+/*.footer-copyright {
     text-align: center;
 }
 
 .footer-copyright > a {
     display: block;
     
-}
+}*/
 
 
-#footer-container {
+/*#footer-container {
     text-align: center;
     padding-top: 5em;
 
@@ -397,4 +420,4 @@ footer {
 
 #footer-container > a:hover {
     color: blue;    
-}
+}*/
