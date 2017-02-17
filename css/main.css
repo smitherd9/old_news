@@ -260,6 +260,10 @@ a.readMore {
     top:1px;
 }
 
+#btn-by-date-nyTimes, #btn-by-date-guardian {
+    margin-left: 8.2em;
+}
+
 
 a {
     color: #23ffaa;
