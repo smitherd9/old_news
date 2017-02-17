@@ -5,22 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1">
     <title>Old News</title>
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- animate.css -->
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Poiret+One|Dancing+Script|Shadows+Into+Light|Special+Elite" rel="stylesheet">
+    <!-- jQuery ui -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <!-- hover.css -->
     <link href="css/hover-min.css" rel="stylesheet" media="all">
 </head>
 
-<body>    
+<body>
     <!-- Bootstrap Navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-
                 </button>
                 <a class="navbar-brand" href="#">Old News</a>
             </div>
@@ -31,195 +35,105 @@
             </div>
         </div>
     </nav>
-
     <!-- Modal -->
-<div id="aboutModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">About Old News</h4>
-      </div>
-      <div class="modal-body">
-        <p>Old News is an application that allows you to search for articles in recent history.</p>
-        <p>In a world saturated with news stories 24 hours a day,
-        it's important to take time out to remember how and why we got here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-    <!--begin bg-carousel-->
-<!--     <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel"> -->
-        <!-- Wrapper for slides -->
-<!--         <div class="carousel-inner">
-            <div class="item active">
-                <div class="slide1"></div>
+    <div id="aboutModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About Old News</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Old News is an application that allows you to search for articles in recent history.</p>
+                    <p>In a world saturated with news stories 24 hours a day, it's important to take time out to remember how and why we got here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="item">
-                <div class="slide2"></div>
-            </div>
-            <div class="item">
-                <div class="slide3"></div>
-            </div>
-        </div> -->
-        <!-- .carousel-inner -->
-<!--         <div class="container carousel-overlay text-center">
-            <h1>Old News</h1>
-            <h3>In a world of 24 hour news, a pause button is necessary.</h3>
         </div>
-    </div> -->
-    <!-- .carousel -->
-    <!--end bg-carousel-->
-    <!-- TODO Try to implement grabbed headline photos into carousel.  These will change every day. -->
-
-
+    </div>
     <div class="container-fluid">
-
-    <!--  Search the New York Times -->
-    <div class="row" id="search-section">
-        <div class="col-md-6">
-        <div class="newYorkTimes">
-        <h2>Search The New York Times for stories from 1851</h2>        
-        </div>
-        </div>
-
-        <div class="col-md-6">
-    <!-- Search The Guardian -->
-        <div class="guardian">
-        <h2>Search The Guardian</h2>
-        <h2>for stories from 1999</h2>
-        
-        </div>
-        </div>
-
-
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-        <section class="search">
-            <div class="input-group">
-                <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Search for news stories by a specific date" aria-describedby="basic-addon1">
-                <span class="input-group-btn">
-                <button class="btn-search" id="btn-by-date-nyTimes">Search</button>
-                </span>
+        <!--  Search the New York Times -->
+        <div class="row" id="search-section">
+            <div class="col-md-6">
+                <div class="newYorkTimes">
+                    <h2>Search The New York Times for stories from 1851</h2>
+                </div>
             </div>
-
-<!--                 <form class="article-search">
-                    <label>Search by Date</label>
-                    <input type="text" name="by-date" id="by-date-nyTimes">
-                    <button class="btn-search" id="btn-by-date-nyTimes">Search</button>
-                </form> -->
-
-                <div class="input-group">
-                <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Search for news stories by a date range" aria-describedby="basic-addon1" required>
-                <input type="text" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" aria-describedby="basic-addon1" required>
-                <span class="input-group-btn">
-                <button class="btn-search" id="btn-by-date-range-nyTimes">Search</button>
-                </span>
+            <div class="col-md-6">
+                <!-- Search The Guardian -->
+                <div class="guardian">
+                    <h2>Search The Guardian</h2>
+                    <h2>for stories from 1999</h2>
                 </div>
-
-<!--                 <form class="article-search">
-                    <label>Search by Date Range</label>
-                    <input type="text" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Start Date" required>
-                    <input type="text" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" required>
-                    <button class="btn-search" id="btn-by-date-range-nyTimes">Search</button>
-                </form>
-
-                <form class="article-search">
-                    <label>Search by Topic</label>
-                    <input type="text" name="by-topic" id="by-topic-nyTimes" placeholder="Ex: Politics, Opinion, Sports">
-                    <input type="text" name="by-topic" id="by-topic-date-nyTimes" placeholder="Enter a date">
-                    <button class="btn-search" id="btn-by-topic-nyTimes">Search</button>
-                </form> -->
-
-                <div class="input-group">
-                <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Search by topic" aria-describedby="basic-addon1">
-                <input type="text" name="by-topic" id="by-topic-date-nyTimes" placeholder="Enter a date" aria-describedby="basic-addon1">
-                <span class="input-group-btn">
-                <button class="btn-search" id="btn-by-topic-nyTimes">Search</button>
-                </span>
-                </div>
-            
-        </section>
+            </div>
         </div>
-        
-
-        
+        <div class="row">
             <div class="col-md-6">
                 <section class="search">
-
-                <div class="input-group">
-                <input type="text" class="form-control" name="by-date" id="by-date-guardian" placeholder="Search for news stories by a specific date" aria-describedby="basic-addon1">
-                <span class="input-group-btn">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Search for news stories by a specific date" aria-describedby="basic-addon1">
+                        <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-date-nyTimes">Search</button>
+                </span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Search for news stories by a date range" aria-describedby="basic-addon1" required>
+                        <input type="text" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" aria-describedby="basic-addon1" required>
+                        <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-date-range-nyTimes">Search</button>
+                </span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Search by topic" aria-describedby="basic-addon1">
+                        <input type="text" name="by-topic" id="by-topic-date-nyTimes" placeholder="Enter a date" aria-describedby="basic-addon1">
+                        <span class="input-group-btn">
+                <button class="btn-search" id="btn-by-topic-nyTimes">Search</button>
+                </span>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-6">
+                <section class="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="by-date" id="by-date-guardian" placeholder="Search for news stories by a specific date" aria-describedby="basic-addon1">
+                        <span class="input-group-btn">
                 <button class="btn-search" id="btn-by-date-guardian">Search</button>
                 </span>
-                </div>
-
-<!--                 <form class="article-search">
-                    <label>Search by Date</label>
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                    <input type="text" name="by-date" id="by-date-guardian">
-                    <button class="btn-search" id="btn-by-date-guardian">Search</button>
-                </form>
- -->
-
-                <div class="input-group">
-                <input type="text" class="form-control" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" aria-describedby="basic-addon1" required>
-                <input type="text" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
-                <span class="input-group-btn">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" aria-describedby="basic-addon1" required>
+                        <input type="text" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
+                        <span class="input-group-btn">
                 <button class="btn-search" id="btn-by-date-range-guardian">Search</button>
                 </span>
-                </div>
-
-<!--                 <form class="article-search">
-                    <label>Search by Date Range</label>
-                    <input type="text" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" required>
-                    <input type="text" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
-                    <button class="btn-search" id="btn-by-date-range-guardian">Search</button>
-                </form> -->
-
-
-                <div class="input-group">
-                <input type="text" class="form-control" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
-                <input type="text" name="by-topic" id="by-topic-date-guardian" placeholder="Enter a date">                
-                <span class="input-group-btn">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
+                        <input type="text" name="by-topic" id="by-topic-date-guardian" placeholder="Enter a date">
+                        <span class="input-group-btn">
                 <button class="btn-search" id="btn-by-date-range-guardian">Search</button>
                 </span>
-                </div>
-
-<!--                 <form class="article-search">
-                    <label>Search by Topic</label>
-                    <input type="text" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports">
-                    <input type="text" name="by-topic" id="by-topic-date-guardian" placeholder="Enter a date">
-                    <button class="btn-search" id="btn-by-topic-guardian">Search</button>
-                </form> -->
-          
-            </section>
-            </div>
+                    </div>
+                </section>
             </div>
         </div>
+    </div>
 
-<!-- Search Results Section -->
+    <!-- Search Results Section -->
     <div class="row">
-        <div class="col-md-6">    
+        <div class="col-md-6">
             <div id="ny-times"></div>
         </div>
         <div class="col-md-6" id="guardian"></div>
     </div>
-
-<footer class="footer">
+    <footer class="footer">
         <div class="container" id="footer-container">
             <div class="row" id="footer-row">
                 <div class="col-sm-12">
-                <span>
+                    <span>
                     <p><i class="fa fa-copyright" aria-hidden="true"></i>2016 A project by
                     <a href="https://smitherd9.github.io">
                     Daniel Smither
@@ -230,15 +144,14 @@
             </div>
         </div>
     </footer>
-        
 
-
-    
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="js/paperfold.min.js"></script>
+    <!-- moment.js -->
+    <script src="js/moment.js"></script>    
+    <!-- font awesome -->
     <script src="https://use.fontawesome.com/346d870b8b.js"></script>
     <script src="js/app.js"></script>
 </body>
