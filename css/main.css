@@ -15,17 +15,17 @@ body {
 
 
 
-    background: #141E30; 
+/*    background: #141E30; 
     background: -webkit-linear-gradient(to left, #141E30 , #243B55); 
-    background: linear-gradient(to left, #141E30 , #243B55); 
+    background: linear-gradient(to left, #141E30 , #243B55); */
         
 
 
 /*Frost*/
 
-/*    background: #000428; 
+    background: #000428; 
     background: -webkit-linear-gradient(to left, #000428 , #004e92); 
-    background: linear-gradient(to left, #000428 , #004e92); */
+    background: linear-gradient(to left, #000428 , #004e92); 
         
         
 }
@@ -72,7 +72,7 @@ body {
 
 h2 {
     color: white;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Special Elite', cursive;
     font-weight: normal;
    
 }
@@ -94,23 +94,26 @@ label {
 
 .search {  
     padding: 0.5em;
-    margin-bottom: 7em;
+    margin-bottom: 4em;
 }
 
 #ny-times {
-    background: linear-gradient(
+/*    background: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ), url(../img/ny-times-building2.jpg) no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding-right: 5em;
+    background-size: cover;*/
+    background: #E0EAFC; 
+    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); 
+    background: linear-gradient(to left, #E0EAFC , #CFDEF3); 
+
+    color: gray;
+    text-align: left;
     border-radius: 5px;
     overflow-y: auto;
     max-height: 482px;
     margin-left: 1em;
-    margin-top: 2em;
+    margin-bottom: 4em;
 }
 
 #ny-times > div > p {
@@ -139,13 +142,13 @@ label {
     ), url(../img/guardian.JPG) no-repeat center center fixed;
     background-size: cover;
     color: white;
-    text-align: center;
+    text-align: left;
     border-radius: 5px;
     padding-right: 5em;
     overflow-y: auto;
     max-height: 482px;
-    margin-top: 2em;
     margin-left: 1em;
+    margin-bottom: 4em;
     width: 48%;
 }
 
@@ -183,6 +186,7 @@ a.readMore {
     text-align: center;
     background: url('../img/Big-Ben-at-night.jpg');
     background-size: cover;
+    margin-left: 1em;
     height: 481.2px;
 
 
@@ -198,6 +202,7 @@ a.readMore {
     background: url('../img/nyc.jpg');
     background-size: cover;
     margin-left: 1em;
+    margin-bottom: 3em;
     height: 481.2px;
 
 }
@@ -212,10 +217,12 @@ a.readMore {
 
 .fa-github {   
     color: white;
+    padding-left: 0.5em;
 }
 
 .fa-linkedin-square {
     color: white;
+    padding-right: 0.5em;
 }
 
 .fa-twitter {
@@ -230,7 +237,7 @@ a.readMore {
 
   /*  Button Styles  */
 
-.btn-search {        
+/*.btn-search {        
     border-radius:5px;
     border:1px solid #337bc4;
     background: transparent;
@@ -243,7 +250,7 @@ a.readMore {
     font-weight:bold;
     padding:1px 25px;
 
-}
+}*/
 
 .btn-search:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
@@ -258,10 +265,6 @@ a.readMore {
 .btn-search:active {
     position:relative;
     top:1px;
-}
-
-#btn-by-date-nyTimes, #btn-by-date-guardian {
-    margin-left: 8.2em;
 }
 
 
@@ -289,35 +292,19 @@ a:hover {
     text-align: center;
 
 }
-
 .footer p {
     color: white;
 }
 
 #footer-row {
-    padding-top: 1.3em;
+    padding-top: 0.5em;
 }
 
-/*.footer-copyright {
-    text-align: center;
-}
-
-.footer-copyright > a {
-    display: block;
-    
-}*/
 
 
-/*#footer-container {
-    text-align: center;
-    padding-top: 5em;
+/*Media Queries*/
+
+
+@media screen and (max-width: 1479px) {
 
 }
-
-#footer-container > a {
-    color: white;    
-}
-
-#footer-container > a:hover {
-    color: blue;    
-}*/
