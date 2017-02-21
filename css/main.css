@@ -42,6 +42,14 @@ body {
     font-size: 28px;
 }
 
+.modal-content {
+    background: #E0EAFC; 
+    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); 
+    background: linear-gradient(to left, #E0EAFC , #CFDEF3); 
+    color: darkblue;
+    font-size: 18px;
+}
+
 
 
 .bodyText {
@@ -70,11 +78,7 @@ label {
     padding: 1em;
 }
 
-/*.article {
-    padding: 2em;
-    border-bottom: 1px dashed white;
-    margin: 1em;
-}*/
+
 
 .search {  
     padding: 0.5em;
@@ -226,24 +230,9 @@ a.readMore {
 
 
 
-  /*  Button Styles  */
+/*Button Styles*/
 
-/*.btn-search {        
-    border-radius:5px;
-    border:1px solid #337bc4;
-    background: transparent;
-    margin-left: 3em;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:17px;
-    font-weight:bold;
-    padding:1px 25px;
-
-}*/
-
-.btn-search:hover, .readMore:hover {
+.btn-search:hover, .readMore:hover, .btn-modal:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
     background:-moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
     background:-webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
@@ -309,5 +298,5 @@ a:hover {
     flex-wrap: wrap    
     padding: 2em;
     color: white;
-}
+    }
 }
