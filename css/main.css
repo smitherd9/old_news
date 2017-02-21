@@ -90,7 +90,7 @@ label {
     text-align: left;
     border-radius: 5px;
     overflow-y: auto;
-    width: 48%;
+    width: 100%;
     max-height: 482px;
     margin-left: 1em;
     margin-bottom: 4em;
@@ -115,41 +115,7 @@ label {
     margin-left: 5px;
 }
 
-/*#ny-times > img {
-    padding: 20px 20px;
-    margin: auto
-}*/
 
-/*.horizontal-scroll-wrapper{
-  position:relative;
-  display:block;  
-  top:0;
-  left:0;
-  width:80px;
-  max-height:500px;
-  margin:0;
-  overflow-y:auto;
-  overflow-x:hidden;
-  transform:rotate(-90deg) translateY(-80px);
-  transform-origin:right top;
-}
-.horizontal-scroll-wrapper > div{
-  display:block;
-  padding: 6em;
-  margin: 2em; 
-  transform:rotate(90deg);
-  
-}*/
-
-/*.squares{
-  padding:60px 0 0 0;
-}
-
-.squares > div{
-  width:60px;
-  height:60px;
-  margin:10px;
-}*/
 
 .newspaper-name {
     display: none;
@@ -167,7 +133,7 @@ label {
     max-height: 482px;
     margin-left: 1em;
     margin-bottom: 4em;
-    width: 48%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -232,7 +198,9 @@ a.readMore {
 
 .input-group {
     display: inline-flex;
+    flex-wrap: wrap;    
     padding: 1em;
+    color: white;
 }
 
 
@@ -334,4 +302,12 @@ a:hover {
         color: white;
         margin-left: 5em;
     }
+}
+
+@media screen and (max-width: 992px) {
+    .input-group {
+    flex-wrap: wrap    
+    padding: 2em;
+    color: white;
+}
 }

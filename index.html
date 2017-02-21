@@ -74,21 +74,26 @@
             <div class="col-md-6">
                 <section class="search">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Search for news stories by a specific date" aria-describedby="basic-addon1">
+                    <p>Search the New York Times by date</p>
+                        <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Click to choose a date" aria-describedby="basic-addon1">
                         <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-date-nyTimes">Search</button>
                 </span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Search for news stories by a date range" aria-describedby="basic-addon1" required>
+                    <p>Search the New York Times by date range</p>
+                        <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Start Date" aria-describedby="basic-addon1" required>
                         <input type="text" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" aria-describedby="basic-addon1" required>
                         <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-date-range-nyTimes">Search</button>
                 </span>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Search by topic" aria-describedby="basic-addon1">
-                        <input type="text" name="by-topic" id="by-topic-date-nyTimes" placeholder="Enter a date" aria-describedby="basic-addon1">
+                    <p>Search the New York Times by topic within a date range</p>
+                        <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
+                        <!-- TODO: Fix datepicker for topic search -->
+<!--                         <input type="text" name="by-topic" id="by-topic-date-nyTimes" placeholder="Start date" aria-describedby="basic-addon1">
+                        <input type="text" name="by-topic" id="by-topic-date-nyTimes2" placeholder="End date" aria-describedby="basic-addon1"> -->
                         <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-topic-nyTimes">Search</button>
                 </span>
@@ -99,12 +104,14 @@
             <div class="col-md-6">
                 <section class="search">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="by-date" id="by-date-guardian" placeholder="Search for news stories by a specific date" aria-describedby="basic-addon1">
+                    <p>Search the Guardian by date</p>
+                        <input type="text" class="form-control" name="by-date" id="by-date-guardian" placeholder="Click to choose a date" aria-describedby="basic-addon1">
                         <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-date-guardian">Search</button>
                 </span>
                     </div>
                     <div class="input-group">
+                    <p>Search the Guardian by date range</p>
                         <input type="text" class="form-control" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" aria-describedby="basic-addon1" required>
                         <input type="text" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
                         <span class="input-group-btn">
@@ -112,10 +119,12 @@
                 </span>
                     </div>
                     <div class="input-group">
+                    <p>Search the Guardian by topic</p>
                         <input type="text" class="form-control" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
-                        <input type="text" name="by-topic" id="by-topic-date-guardian" placeholder="Enter a date">
+<!--                         TODO: Fix datepicker for topic search
+                        <input type="text" name="by-topic" id="by-topic-date-guardian" placeholder="Enter a date"> -->
                         <span class="input-group-btn">
-                <button class="btn btn-default btn-search" id="btn-by-date-range-guardian">Search</button>
+                <button class="btn btn-default btn-search" id="btn-by-topic-guardian">Search</button>
                 </span>
                     </div>
                 </section>
@@ -126,16 +135,20 @@
     <!-- Search Results Section -->
     <div class="container-fluid">
     <div class="row">
+
+        <div class="col-sm-6">
         <div class="newspaper-name">
             <h3>The New York Times</h3>
         </div>
-        <div class="col-sm-6 horizontal-scroll-wrapper squares" id="ny-times">
-            <!-- <div class="horizontal-scroll-wrapper squares" id="ny-times"></div> -->
+            <div class="horizontal-scroll-wrapper squares" id="ny-times"></div>
         </div>
+
+        <div class="col-sm-6">
         <div class="newspaper-name">
             <h3>The Guardian</h3>
         </div>
-        <div class="col-sm-6" id="guardian"></div>
+            <div id="guardian"></div>
+        </div>
     </div>
     </div>
 
