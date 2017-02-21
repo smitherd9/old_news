@@ -231,7 +231,7 @@ $(function() {
             var resultURL = currentObject.web_url;
             var body = currentObject.lead_paragraph;
 
-            var element = $("<div>");
+            var element = $('<div>');
             element.addClass('article');
 
             var headline = $('<a>');
@@ -248,7 +248,7 @@ $(function() {
             var readMore = $('<a>');
             readMore.attr('href', resultURL);
             readMore.attr('target', '_blank');
-            readMore.addClass('readMore');
+            readMore.addClass('btn btn-default readMore');
             readMore.text('Read More...');
 
             var bodyText = $('<div>');
@@ -392,7 +392,7 @@ $(function() {
             var resultURL = currentObject.webUrl;
             var body = currentObject.blocks.body['0'].bodyTextSummary;
 
-            var element = $("<div>");
+            var element = $('<div>');
             element.addClass('article');
 
             var headline = $('<a>');
@@ -407,8 +407,9 @@ $(function() {
             snippet.text(result);
 
             var readMore = $('<a>');
-            // readMore.attr('href', bodyText);
-            readMore.addClass('readMore');
+            readMore.attr('href', resultURL);
+            readMore.attr('target', '_blank');
+            readMore.addClass('btn btn-default readMore');
             readMore.text('Read More...');
 
             var bodyText = $('<div>');
