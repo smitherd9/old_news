@@ -107,9 +107,13 @@ $(function() {
 
     $('#btn-by-topic-nyTimes').click(function() {
         var byTopic = $('#by-topic-nyTimes').val();
-        var byDate = $('#by-topic-date-nyTimes').datepicker("getDate");        
-        var mDate = moment(byDate);       
+        var byDate = $('#by-topic-date-nyTimes').datepicker("getDate");
+        // TODO: Fix datepicker for topic search, byDate2 field not working
+        var byDate2 = $('#by-topic-date-nyTimes2').datepicker("getDate");        
+        var mDate = moment(byDate);
+        var mDate2 = moment(byDate2);       
         var nyTimesDate = mDate.format('YYYYMMDD');
+        var nyTimesDate2 = mDate2.format('YYYYMMDD');
         console.log(nyTimesDate);
         
         getNyTimesByTopic(byTopic, nyTimesDate);
@@ -120,9 +124,13 @@ $(function() {
     $('#btn-by-topic-guardian').click(function() {
         var byTopic = $('#by-topic-guardian').val();
         var byTopicDate = $('#by-topic-date-guardian').datepicker("getDate");
+        var byTopicDate2 = $('#by-topic-date-guardian2').datepicker("getDate");
         var mDate = moment(byTopicDate);
+        var mDate2 = moment(byTopicDate2);
         var guardianDate = mDate.format('YYYY-MM-DD');
-        getGuardianByTopic(byTopic, guardianDate);
+        var guardianDate2 = mDate2.format('YYYY-MM-DD');
+        getGuardianByTopic(byTopic, guardianDate, guardianDate2);
+        console.log(byTopic);
     });
 
 
@@ -136,16 +144,14 @@ $(function() {
 
 
     function getNyTimesByDate(nyTimesDate) {
-        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-
-        //For #by-date //
+        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";      
 
         $.ajax({
             url: url,
             type: 'GET',
-            dataType: "json",
+            dataType: 'json',
             data: {
-                'api-key': "3e086fa1430d466ba4a63a7818c323a1",
+                'api-key': '3e086fa1430d466ba4a63a7818c323a1',
                 'begin_date': nyTimesDate,
                 'end_date': nyTimesDate
             },
@@ -191,9 +197,9 @@ $(function() {
 
 
     /// By Topic /// 
+    
 
-
-    function getNyTimesByTopic(byTopic, nyTimesDate) {
+    function getNyTimesByTopic(byTopic, nyTimesDate, nyTimesDate2) {
         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         $.ajax({
             url: url,
@@ -203,7 +209,7 @@ $(function() {
                 'api-key': "3e086fa1430d466ba4a63a7818c323a1",
                 'q': byTopic,                 
                 'begin_date': nyTimesDate,
-                'end_date': nyTimesDate
+                'end_date': nyTimesDate2
             },
             success: function(data) {
                 console.log(data);
@@ -231,7 +237,7 @@ $(function() {
             var resultURL = currentObject.web_url;
             var body = currentObject.lead_paragraph;
 
-            var element = $("<div>");
+            var element = $('<div>');
             element.addClass('article');
 
             var headline = $('<a>');
@@ -248,7 +254,7 @@ $(function() {
             var readMore = $('<a>');
             readMore.attr('href', resultURL);
             readMore.attr('target', '_blank');
-            readMore.addClass('readMore');
+            readMore.addClass('btn btn-default readMore');
             readMore.text('Read More...');
 
             var bodyText = $('<div>');
@@ -271,20 +277,8 @@ $(function() {
     }
 
 
-    // $('#ny-times').on('click', '.readMore', function() {
-    //     $(this).siblings('.bodyText').toggle();
-    //     //get article and display article 
-    //     //api call 
-    // });
-
-
-
-
 
     ////////        Functions for The Guardian       ////////
-
-
-
 
 
 
@@ -327,11 +321,10 @@ $(function() {
         $.ajax({
             url: url,
             type: 'GET',
-            format: "json",
-            // orderBy: "oldest",
+            format: "json",            
             data: {
                 'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-                // 'orderBy': 'oldest',
+                'orderBy': 'oldest',
                 'from-date': guardianDate1,
                 'to-date': guardianDate2,
                 'use-date': 'published',
@@ -348,7 +341,7 @@ $(function() {
     }
 
 
-    function getGuardianByTopic(byTopic, guardianDate) {
+    function getGuardianByTopic(byTopic, guardianDate, guardianDate2) {
         var url = 'http://content.guardianapis.com/search?';
         $.ajax({
             url: url,
@@ -358,7 +351,7 @@ $(function() {
                 'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
                 'q': byTopic,
                 'from-date': guardianDate,
-                'to-date': guardianDate,
+                'to-date': guardianDate2,
                 'show-fields': 'trailText,headline,byline',
                 'shouldHideAdverts': true 
 
@@ -385,14 +378,21 @@ $(function() {
         var guardianStories = results.response.results;
         console.log(guardianStories);
         $.each(guardianStories, function(index, currentObject) {
-            // html += '<p><a href="#">' + results.response.webTitle + '</a></p>';
+            
             console.log(currentObject);
             var result = currentObject.fields.trailText;
             var resultHeadline = currentObject.fields.headline //.webTitle;
             var resultURL = currentObject.webUrl;
-            var body = currentObject.blocks.body['0'].bodyTextSummary;
+            if (currentObject.hasOwnProperty('blocks')) {
+                var body = currentObject.blocks.body['0'].bodyTextSummary;
+            }
 
-            var element = $("<div>");
+            else {
+                var body = result;
+            }
+            
+
+            var element = $('<div>');
             element.addClass('article');
 
             var headline = $('<a>');
@@ -407,8 +407,9 @@ $(function() {
             snippet.text(result);
 
             var readMore = $('<a>');
-            // readMore.attr('href', bodyText);
-            readMore.addClass('readMore');
+            readMore.attr('href', resultURL);
+            readMore.attr('target', '_blank');
+            readMore.addClass('btn btn-default readMore');
             readMore.text('Read More...');
 
             var bodyText = $('<div>');
@@ -422,47 +423,12 @@ $(function() {
 
             $('#guardian').append(element);           
         
-            $('#guardian').fadeIn(1000);
-
-                
+            $('#guardian').fadeIn(1000);               
 
            
         });
         
     }
-
-
-$('#guardian').on('click', '.readMore', function() {
-        $(this).siblings('.bodyText').toggle();
-    });
-
-
-
- // function foldOUt(){
- //    var paperfold = $('.hidden').paperfold();
- //    $('.paperfold-toggle').click(paperfold.toggle);
- // }
-
-
- function getGuardianArticle(resultURL) {
-        var url = resultURL;
-        $.ajax({
-            url: url,
-            type: 'GET',
-            format: "json",
-            data: {
-                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
-                'show-blocks': 'body',
-                'shouldHideAdverts': true                
-            },
-            success: function(data) {
-                console.log(data);
-                var results = data;
-                showGuardian(results);
-            }
-        });
-    }
-
 
 
     /////  jQuery Datepicker UI     /////
@@ -509,6 +475,14 @@ $('#guardian').on('click', '.readMore', function() {
 
         });
 
+        $("#by-topic-date-nyTimes2").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'mm-dd-yy',
+            yearRange: "1851:c"
+
+        });
+
         $("#by-date-range1-guardian").datepicker({
             changeMonth: true,
             changeYear: true,
@@ -532,11 +506,17 @@ $('#guardian').on('click', '.readMore', function() {
             yearRange: "1999:c"
 
         });
+
+        $("#by-topic-date-guardian2").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'mm-dd-yy',
+            yearRange: "1999:c"
+
+        });
+
+
+
     });
-
-
-
-
-
 
 });
