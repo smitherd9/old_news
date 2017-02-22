@@ -26,8 +26,3 @@ appears in the upper right of the search bar and then choosing to allow insecure
 
 ![old news ss3](https://cloud.githubusercontent.com/assets/17256531/23188366/6e0d9962-f85c-11e6-8d51-22e125feb101.PNG)
 
-
-## Screenshots for mobile 
-
-![old news ss-mobile1](https://cloud.githubusercontent.com/assets/17256531/23188367/71894096-f85c-11e6-94f7-c66f096cf704.PNG)
-![old news ss-mobile2](https://cloud.githubusercontent.com/assets/17256531/23188371/74aa734e-f85c-11e6-853f-05e9094bb647.PNG)
