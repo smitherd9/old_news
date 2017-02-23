@@ -119,6 +119,10 @@ label {
     margin-left: 5px;
 }
 
+.search-container {
+    width: 85%;
+}
+
 
 
 .newspaper-name {
@@ -160,6 +164,11 @@ label {
 }
 
 #search-section {
+    padding-top: 5em;
+    padding-bottom: 8em;
+}
+
+#pictures {
     padding-top: 7em;
 }
 
@@ -193,19 +202,26 @@ a.readMore {
     border-bottom: 1px solid white;
     text-align: center;
     background: url('../img/nyc.jpg');
-    background-size: cover;
-    margin-left: 1em;
+    background-size: cover;    
     margin-bottom: 3em;
     height: 481.2px;
 
 }
 
-.input-group {
-    display: inline-flex;
-    flex-wrap: wrap;    
-    padding: 1em;
-    color: white;
+.nyTimesSearch {
+    text-align: center;
 }
+
+.input-group {
+    padding: 1em;    
+}
+
+#date-nyTimes, #date-range-nyTimes, #topic-and-date-nyTimes  {
+
+    padding: 1em;
+}
+
+
 
 
 /*Font Awesome Styles*/

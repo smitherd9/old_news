@@ -20,7 +20,7 @@ $(function() {
     $('#guardian').hide();
     
 
-    $('.article-search').submit(function(e) {
+    $('.form-inline').submit(function(e) {
         e.preventDefault();
 
 
