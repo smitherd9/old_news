@@ -121,6 +121,8 @@ label {
 
 .search-container {
     width: 85%;
+    margin-left: 3em;
+    box-shadow: 3px -1px 6px 1px black;
 }
 
 
@@ -208,7 +210,7 @@ a.readMore {
 
 }
 
-.nyTimesSearch {
+.nyTimesSearch, .guardianSearch {
     text-align: center;
 }
 
@@ -314,5 +316,9 @@ a:hover {
     flex-wrap: wrap    
     padding: 2em;
     color: white;
+    }
+
+    .search-container {
+        margin-bottom: 5em;
     }
 }
