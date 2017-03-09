@@ -197,25 +197,30 @@ a.readMore {
 
 .guardian {
     text-align: center;
-    background: url('../img/Big-Ben-at-night.jpg');
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url('../img/Big-Ben-at-night.jpg');
     background-size: cover;
     margin-bottom: 3em;
     height: 265px;
     border-radius: 4px;
-
-
-
+    padding: 24px 12px;
 }
 
-.newYorkTimes {
 
+.newYorkTimes {
     text-align: center;
-    background: url('../img/nyc.jpg');
-    background-size: cover;    
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url(../img/nyc.jpg);
+    background-size: cover;
+
     margin-bottom: 3em;
     height: 265px;
     border-radius: 4px;
-
+    padding: 24px 12px;
 }
 
 
@@ -288,7 +293,7 @@ a:hover {
     position: absolute;
     width: 100%;
     height: 50px;
-    background: #404040;
+    background: rgba(255,255,255,0.16);
     text-align: center;
 /*    padding: 3em 0em 0em 0em;*/
 
