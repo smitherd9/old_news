@@ -42,7 +42,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">About Old News</h4>
+                    <h3 class="modal-title">About Old News</h3>
                 </div>
                 <div class="modal-body">
                     <p>Old News is an application that allows you to search for articles in recent history.</p>
@@ -56,127 +56,126 @@
     </div>
     <div class="container-fluid">
         <!--  Search the New York Times -->
-        <div class="row" id="pictures">
-            <div class="col-md-6">
-                <div class="newYorkTimes">
-                    <h2>Search The New York Times for stories from 1851</h2>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <!-- Search The Guardian -->
-                <div class="guardian">
-                    <h2>Search The Guardian for stories from 1999</h2>
-                </div>
-            </div>
-        </div>
         <div class="row" id="search-section">
-            <div class="col-md-6 nyTimesSearch">
+            <div class="col-md-6">
                 <div class="search-container">
-                    <div class="input-group" id="date-nyTimes">
-                        <span class="input-group-addon">The New York Times by date</span>
-                        <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Click to choose a date" aria-describedby="basic-addon1">
-                        <span class="input-group-btn">
+                    <div class="newYorkTimes">
+                        <h2>Search The New York Times for stories from 1851</h2>
+                    </div>
+                    <div class="search-fields">
+                        <div class="input-group" id="date-nyTimes">
+                            <span class="input-group-addon">By date</span>
+                            <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Click to choose a date" aria-describedby="basic-addon1">
+                            <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-date-nyTimes">Search</button>
                 </span>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="input-group date-range-nyTimes">
-                                <span class="input-group-addon">By date range</span>
-                                <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Start Date" aria-describedby="basic-addon1" required>
-                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="input-group date-range-nyTimes">
-                                <input type="text" class="form-control" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" aria-describedby="basic-addon2" required>
-                                <span class="input-group-btn">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group date-range-nyTimes">
+                                    <span class="input-group-addon">By date range</span>
+                                    <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Start Date" aria-describedby="basic-addon1" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group date-range-nyTimes">
+                                    <input type="text" class="form-control" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" aria-describedby="basic-addon2" required>
+                                    <span class="input-group-btn">
                             <button class="btn btn-default btn-search" id="btn-by-date-range-nyTimes">Search</button>
                         </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="input-group topic-and-date-nyTimes">
-                        <span class="input-group-addon">By topic within a date range</span>
-                        <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="input-group topic-and-date-nyTimes">
-                                <input type="text" class="form-control" name="by-topic" id="by-topic-date-nyTimes" placeholder="Start date" aria-describedby="basic-addon1">
-                            </div>
+                        <div class="input-group topic-and-date-nyTimes">
+                            <span class="input-group-addon">Topic and date range</span>
+                            <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
                         </div>
-                        <div class="col-sm-6">
-                            <div class="input-group topic-and-date-nyTimes">
-                                <input type="text" class="form-control" name="by-topic" id="by-topic-date-nyTimes2" placeholder="End date" aria-describedby="basic-addon1">
-                                <span class="input-group-btn">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group topic-and-date-nyTimes">
+                                    <input type="text" class="form-control" name="by-topic" id="by-topic-date-nyTimes" placeholder="Start date" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group topic-and-date-nyTimes">
+                                    <input type="text" class="form-control" name="by-topic" id="by-topic-date-nyTimes2" placeholder="End date" aria-describedby="basic-addon1">
+                                    <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-topic-nyTimes">Search</button>
                 </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 guardianSearch">
+            <div class="col-md-6">
                 <div class="search-container">
-                    <div class="input-group">
-                        <span class="input-group-addon">The Guardian by date</span>
-                        <input type="text" class="form-control" name="by-date" id="by-date-guardian" placeholder="Click to choose a date" aria-describedby="basic-addon1">
-                        <span class="input-group-btn">
+                    <!-- Search The Guardian -->
+                    <div class="guardian">
+                        <h2>Search The Guardian for stories from 1999</h2>
+                    </div>
+                    <div class="search-fields">
+                        <div class="input-group">
+                            <span class="input-group-addon">By date</span>
+                            <input type="text" class="form-control" name="by-date" id="by-date-guardian" placeholder="Click to choose a date" aria-describedby="basic-addon1">
+                            <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-date-guardian">Search</button>
                 </span>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-addon">By date range</span>
-                                <input type="text" class="form-control" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" aria-describedby="basic-addon1" required>
-                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
-                                <span class="input-group-btn">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">By date range</span>
+                                    <input type="text" class="form-control" name="by-date-range" id="by-date-range1-guardian" placeholder="Start Date" aria-describedby="basic-addon1" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
+                                    <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-date-range-guardian">Search</button>
                 </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-addon">By topic within a date range</span>
-                        <input type="text" class="form-control" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="by-topic" id="by-topic-date-guardian" placeholder="Start date">
-                            </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">Topic and date range</span>
+                            <input type="text" class="form-control" name="by-topic" id="by-topic-guardian" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
                         </div>
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="by-topic" id="by-topic-date-guardian2" placeholder="End date">
-                                <span class="input-group-btn">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="by-topic" id="by-topic-date-guardian" placeholder="Start date">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="by-topic" id="by-topic-date-guardian2" placeholder="End date">
+                                    <span class="input-group-btn">
                 <button class="btn btn-default btn-search" id="btn-by-topic-guardian">Search</button>
                 </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- End search-section -->
         </div>
     </div>
     <!-- Search Results Section -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                <div class="newspaper-name">
+<!--                 <div class="newspaper-name">
                     <h3>The New York Times</h3>
-                </div>
+                </div> -->
                 <div class="horizontal-scroll-wrapper squares" id="ny-times"></div>
             </div>
             <div class="col-sm-6">
-                <div class="newspaper-name">
+<!--                 <div class="newspaper-name">
                     <h3>The Guardian</h3>
-                </div>
+                </div> -->
                 <div id="guardian"></div>
             </div>
         </div>
@@ -187,7 +186,7 @@
                 <div class="col-sm-12">
                     <span>
                     <p><a href="https://www.linkedin.com/in/daniel-smither-62b871130" target="_blank"><i class="fa fa-linkedin-square fa-2x hvr-grow-rotate" aria-hidden="true"></i></a><i class="fa fa-copyright" aria-hidden="true"></i>2016 A project by
-                    <a href="https://smitherd9.github.io">
+                    <a href="https://smitherd9.github.io" target="_blank">
                     Daniel Smither
                     </a>
                     <a href="https://github.com/smitherd9" target="_blank"><i class="fa fa-github fa-2x hvr-grow-rotate" aria-hidden="true"></i></a>
