@@ -124,6 +124,10 @@ label {
     margin-left: 5px;
 }
 
+#ny-times > div > a.readMore:hover {
+    color: #ffffff;
+}
+
 #guardian > div > p {
     font-size: 16px;
     font-family: 'Lato', sans-serif;
@@ -139,6 +143,10 @@ label {
     font-weight: bold;
     margin-bottom: 10px;
     margin-left: 5px;  
+}
+
+#guardian > div > a.readMore:hover {
+    color: #ffffff;
 }
 
 
