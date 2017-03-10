@@ -92,26 +92,24 @@ label {
     margin-bottom: 4em;
 }
 
-#ny-times {
+#ny-times, #guardian {
     background: #E0EAFC; 
     background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); 
     background: linear-gradient(to left, #E0EAFC , #CFDEF3); 
-
     color: gray;
     text-align: left;
-    border-radius: 5px;
+    border-radius: 4px;
+    padding: 1em;
     overflow-y: auto;
-    width: 100%;
     max-height: 482px;
-    margin-left: 1em;
-    margin-bottom: 4em;
-    display: flex;
-    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 12em;
+    width: 85%;
 }
 
 #ny-times > div > p {
     font-size: 16px;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Lato', sans-serif;
     margin-top: 10px;
     padding-left: 5px;    
 }
@@ -120,11 +118,30 @@ label {
 #ny-times > div > a {
     color: #31708f;
     font-size: 20px;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Lato', sans-serif;
     font-weight: bold;
     margin-bottom: 10px;
     margin-left: 5px;
 }
+
+#guardian > div > p {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    margin-top: 10px;
+    padding-left: 5px;    
+}
+
+
+#guardian > div > a {
+    color: #31708f;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 5px;  
+}
+
+
 
 .search-container {
     width: 85%;
@@ -136,49 +153,12 @@ label {
 
 }
 
-/*.search-fields {
-    margin-top: 2em;
-}
-*/
 
 
 .newspaper-name {
     display: none;
 }
 
-#guardian {
-    background: #E0EAFC; 
-    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); 
-    background: linear-gradient(to left, #E0EAFC , #CFDEF3); 
-    color: gray;
-    text-align: left;
-    border-radius: 5px;
-    padding-right: 5em;
-    overflow-y: auto;
-    max-height: 482px;
-    margin-left: 1em;
-    margin-bottom: 4em;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#guardian > div > p {
-    font-size: 16px;
-    font-family: 'Poiret One', cursive;
-    margin-top: 10px;
-    padding-left: 5px;    
-}
-
-
-#guardian > div > a {
-    color: #31708f;
-    font-size: 20px;
-    font-family: 'Poiret One', cursive;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 5px;  
-}
 
 #search-section {
     margin-top: 10em;
@@ -229,7 +209,6 @@ a.readMore {
 }
 
 #date-nyTimes, #date-range-nyTimes, #topic-and-date-nyTimes  {
-
     padding: 1em;
 }
 
