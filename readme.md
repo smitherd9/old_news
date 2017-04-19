@@ -1,6 +1,6 @@
 # Introduction:
 
-Old News is a web app built for Thinkful's Front End Web Development course that allows the user to search 
+[Old News](https://smitherd9.github.io/old_news/) is a web app that allows the user to search 
 for news stories in the recent past.  It employs the New York Times' Article Search API and The Guardian's Open Platform
 API.  The user can search for stories by date, by a date range and by a topic and date.   
 
