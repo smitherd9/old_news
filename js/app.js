@@ -23,7 +23,6 @@ $(function() {
     $('.form-inline').submit(function(e) {
         e.preventDefault();
 
-
     });
 
  
@@ -151,7 +150,7 @@ $(function() {
             type: 'GET',
             dataType: 'json',
             data: {
-                'api-key': '3e086fa1430d466ba4a63a7818c323a1',
+                'api-key': 'pEWnL3El6LeL32268WYm1bRAzqBpeIEo',
                 'begin_date': nyTimesDate,
                 'end_date': nyTimesDate
             },
@@ -177,7 +176,7 @@ $(function() {
             type: 'GET',
             dataType: "json",
             data: {
-                'api-key': "3e086fa1430d466ba4a63a7818c323a1",
+                'api-key': "pEWnL3El6LeL32268WYm1bRAzqBpeIEo",
                 'begin_date': nyTimesDate1,
                 'end_date': nyTimesDate2
             },
@@ -206,7 +205,7 @@ $(function() {
             type: 'GET',
             dataType: "json",
             data: {
-                'api-key': "3e086fa1430d466ba4a63a7818c323a1",
+                'api-key': "pEWnL3El6LeL32268WYm1bRAzqBpeIEo",
                 'q': byTopic,                 
                 'begin_date': nyTimesDate,
                 'end_date': nyTimesDate2
@@ -291,7 +290,7 @@ $(function() {
             type: 'GET',
             format: "json",
             data: {
-                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+                'api-key': "67dea408-7513-440e-9e68-5d07c95c0abf",
                 'from-date': guardianDate,
                 'to-date': guardianDate,
                 'use-date': 'published',
@@ -323,7 +322,7 @@ $(function() {
             type: 'GET',
             format: "json",            
             data: {
-                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+                'api-key': "67dea408-7513-440e-9e68-5d07c95c0abf",
                 'orderBy': 'oldest',
                 'from-date': guardianDate1,
                 'to-date': guardianDate2,
@@ -348,7 +347,7 @@ $(function() {
             type: 'GET',
             format: "json",
             data: {
-                'api-key': "0175eee5-4dbd-4e58-b5da-8197d8e6dcc7",
+                'api-key': "67dea408-7513-440e-9e68-5d07c95c0abf",
                 'q': byTopic,
                 'from-date': guardianDate,
                 'to-date': guardianDate2,
