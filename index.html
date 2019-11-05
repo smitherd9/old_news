@@ -60,58 +60,76 @@
         <div class="row" id="search-section">
             <div class="col-md-6">
                 <div class="search-container">
-                    <div class="newYorkTimes">
-                        <h2>Search The New York Times for all stories since 1851</h2>
-                    </div>
-                    <div class="search-fields">
-                        <div class="input-group" id="date-nyTimes">
-                            <span class="input-group-addon">By date</span>
-                            <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Click to choose a date" aria-describedby="basic-addon1">
-                            <span class="input-group-btn">
-                <button class="btn btn-default btn-search" id="btn-by-date-nyTimes">Search</button>
-                </span>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="input-group date-range-nyTimes">
-                                    <span class="input-group-addon">By date range</span>
-                                    <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Start Date" aria-describedby="basic-addon1" required>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="input-group date-range-nyTimes">
-                                    <input type="text" class="form-control" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" aria-describedby="basic-addon2" required>
-                                    <span class="input-group-btn">
-                            <button class="btn btn-default btn-search" id="btn-by-date-range-nyTimes">Search</button>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group topic-and-date-nyTimes">
-                            <span class="input-group-addon">Topic and date range</span>
-                            <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="input-group topic-and-date-nyTimes">
-                                    <input type="text" class="form-control" name="by-topic" id="by-topic-date-nyTimes" placeholder="Start date" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="input-group topic-and-date-nyTimes">
-                                    <input type="text" class="form-control" name="by-topic" id="by-topic-date-nyTimes2" placeholder="End date" aria-describedby="basic-addon1">
-                                    <span class="input-group-btn">
-                <button class="btn btn-default btn-search" id="btn-by-topic-nyTimes">Search</button>
-                </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="flip-container" id="flip-toggle">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <!-- front content -->
+                                        <div class="newYorkTimes">
+                                                <h2>Search The New York Times for all stories since 1851</h2>
+                                            </div>
+                                            <div class="search-fields">
+                                                <div class="input-group" id="date-nyTimes">
+                                                    <span class="input-group-addon">By date</span>
+                                                    <input type="text" class="form-control" id="by-date-nyTimes" placeholder="Click to choose a date" aria-describedby="basic-addon1">
+                                                    <span class="input-group-btn">
+                                        <button onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-default btn-search" id="btn-by-date-nyTimes">Search</button>
+                                        </span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="input-group date-range-nyTimes">
+                                                            <span class="input-group-addon">By date range</span>
+                                                            <input type="text" class="form-control" name="by-date-range" id="by-date-range1-nyTimes" placeholder="Start Date" aria-describedby="basic-addon1" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="input-group date-range-nyTimes">
+                                                            <input type="text" class="form-control" name="by-date-range" id="by-date-range2-nyTimes" placeholder="End Date" aria-describedby="basic-addon2" required>
+                                                            <span class="input-group-btn">
+                                                    <button onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-default btn-search" id="btn-by-date-range-nyTimes">Search</button>
+                                                </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group topic-and-date-nyTimes">
+                                                    <span class="input-group-addon">Topic and date range</span>
+                                                    <input type="text" class="form-control" name="by-topic" id="by-topic-nyTimes" placeholder="Ex: Politics, Opinion, Sports" aria-describedby="basic-addon1">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="input-group topic-and-date-nyTimes">
+                                                            <input type="text" class="form-control" name="by-topic" id="by-topic-date-nyTimes" placeholder="Start date" aria-describedby="basic-addon1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="input-group topic-and-date-nyTimes">
+                                                            <input type="text" class="form-control" name="by-topic" id="by-topic-date-nyTimes2" placeholder="End date" aria-describedby="basic-addon1">
+                                                            <span class="input-group-btn">
+                                        <button onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-default btn-search" id="btn-by-topic-nyTimes">Search</button>
+                                        </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="back">
+                                            <!-- back content -->
+                                            <div id="ny-times"></div>
+                                            <button onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" 
+                                            class="btn btn-default btn-search" id="btn-by-date-nyTimes">Search again</button>
+                                        </div>
+                        
+                    
                 </div>
             </div>
+            </div>
+        </div>
             <div class="col-md-6">
                 <div class="search-container">
                     <!-- Search The Guardian -->
+                    <div class="flip-container" id="flip-toggle2">
+                            <div class="flipper">
+                                <div class="front">
                     <div class="guardian">
                         <h2>Search The Guardian for all stories since 1999</h2>
                     </div>
@@ -120,7 +138,8 @@
                             <span class="input-group-addon">By date</span>
                             <input type="text" class="form-control" name="by-date" id="by-date-guardian" placeholder="Click to choose a date" aria-describedby="basic-addon1">
                             <span class="input-group-btn">
-                <button class="btn btn-default btn-search" id="btn-by-date-guardian">Search</button>
+                <button onclick="document.querySelector('#flip-toggle2').classList.toggle('flip');" 
+                class="btn btn-default btn-search" class="btn btn-default btn-search" id="btn-by-date-guardian">Search</button>
                 </span>
                         </div>
                         <div class="row">
@@ -134,7 +153,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="by-date-range" id="by-date-range2-guardian" placeholder="End Date" required>
                                     <span class="input-group-btn">
-                <button class="btn btn-default btn-search" id="btn-by-date-range-guardian">Search</button>
+                <button onclick="document.querySelector('#flip-toggle2').classList.toggle('flip');" class="btn btn-default btn-search" id="btn-by-date-range-guardian">Search</button>
                 </span>
                                 </div>
                             </div>
@@ -153,34 +172,38 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="by-topic" id="by-topic-date-guardian2" placeholder="End date">
                                     <span class="input-group-btn">
-                <button class="btn btn-default btn-search" id="btn-by-topic-guardian">Search</button>
+                <button onclick="document.querySelector('#flip-toggle2').classList.toggle('flip');" class="btn btn-default btn-search" id="btn-by-topic-guardian">Search</button>
                 </span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </div>
+                    <div class="back">
+                            <!-- back content -->
+                            <div id="guardian"></div>
+                            <button onclick="document.querySelector('#flip-toggle2').classList.toggle('flip');" 
+                            class="btn btn-default btn-search">Search again</button>
+                        </div>
+                        </div>
+                        </div>
+
                 </div>
             </div>
             <!-- End search-section -->
         </div>
     </div>
     <!-- Search Results Section -->
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <!--                 <div class="newspaper-name">
-                    <h3>The New York Times</h3>
-                </div> -->
                 <div id="ny-times"></div>
             </div>
             <div class="col-md-6">
-                <!--                 <div class="newspaper-name">
-                    <h3>The Guardian</h3>
-                </div> -->
                 <div id="guardian"></div>
             </div>
         </div>
-    </div>
+    </div> -->
     <footer class="footer">
         <div class="container" id="footer-container">
             <div class="row" id="footer-row">

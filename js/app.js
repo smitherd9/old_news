@@ -1,6 +1,5 @@
 $(function() {
 
-
     // Function for Animate.Css // 
 
     $.fn.extend({
@@ -11,6 +10,8 @@ $(function() {
             });
         }
     });
+
+
 
 
     // You can make separate functions for each ajax call 
@@ -106,8 +107,7 @@ $(function() {
 
     $('#btn-by-topic-nyTimes').click(function() {
         var byTopic = $('#by-topic-nyTimes').val();
-        var byDate = $('#by-topic-date-nyTimes').datepicker("getDate");
-        // TODO: Fix datepicker for topic search, byDate2 field not working
+        var byDate = $('#by-topic-date-nyTimes').datepicker("getDate");        
         var byDate2 = $('#by-topic-date-nyTimes2').datepicker("getDate");        
         var mDate = moment(byDate);
         var mDate2 = moment(byDate2);       

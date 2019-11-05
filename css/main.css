@@ -48,8 +48,8 @@ body {
 }
 
 .modal-content {
-    background: #e6e6e6;  
-    color: darkblue;
+    background-image: url('../img/texturedbkgrd.jpg');  
+    color: #1a1c1a;    
     font-size: 18px;
 }
 
@@ -93,18 +93,22 @@ label {
 }
 
 #ny-times, #guardian {
-    background: #E0EAFC; 
+    /* background: #E0EAFC; 
     background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); 
-    background: linear-gradient(to left, #E0EAFC , #CFDEF3); 
-    color: gray;
+    background: linear-gradient(to left, #E0EAFC , #CFDEF3);  */
+
+    background-image: url('../img/newspaperbkgrd.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #1a1c1a;
     text-align: left;
     border-radius: 4px;
     padding: 1em;
     overflow-y: auto;
     max-height: 482px;
     margin: 0 auto;
-    margin-bottom: 12em;
-    width: 85%;
+    margin-bottom: 1em;
+    
 }
 
 #ny-times > div > p {
@@ -116,7 +120,7 @@ label {
 
 
 #ny-times > div > a {
-    color: #31708f;
+    color: #1a1c1a;
     font-size: 20px;
     font-family: 'Lato', sans-serif;
     font-weight: bold;
@@ -137,7 +141,7 @@ label {
 
 
 #guardian > div > a {
-    color: #31708f;
+    color: #1a1c1a;
     font-size: 20px;
     font-family: 'Lato', sans-serif;
     font-weight: bold;
@@ -161,6 +165,49 @@ label {
 
 }
 
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+    /* .flip-container:hover .flipper, .flip-container.hover .flipper,  */
+    .flip-container.flip .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 550px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
 
 
 .newspaper-name {
@@ -264,7 +311,7 @@ a.readMore {
 
 
 a {
-    color: #23ffaa;
+    color: #378de5;
 }
 
 a:hover {
