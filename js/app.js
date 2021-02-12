@@ -284,7 +284,7 @@ $(function() {
     /// By Date /// 
 
     function getGuardianByDate(guardianDate) {
-        var url = 'http://content.guardianapis.com/search?';
+        var url = 'https://content.guardianapis.com/search?';
         $.ajax({
             url: url,
             type: 'GET',
@@ -316,7 +316,7 @@ $(function() {
 
 
     function getGuardianByDateRange(guardianDate1, guardianDate2) {
-        var url = 'http://content.guardianapis.com/search?';
+        var url = 'https://content.guardianapis.com/search?';
         $.ajax({
             url: url,
             type: 'GET',
@@ -341,7 +341,7 @@ $(function() {
 
 
     function getGuardianByTopic(byTopic, guardianDate, guardianDate2) {
-        var url = 'http://content.guardianapis.com/search?';
+        var url = 'https://content.guardianapis.com/search?';
         $.ajax({
             url: url,
             type: 'GET',
